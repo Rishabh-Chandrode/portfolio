@@ -1,0 +1,234 @@
+.bio-section {
+    /* height: 100vh; */
+    /* background-color: violet; */
+    display: block;
+    font-family: 'Lora', serif;
+}
+
+.secondary-heading {
+    font-family: 'Lora', serif;
+    font-size: 2.3rem;
+    color: #cc005f;
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.bio-container {
+    /* background-color: tomato; */
+    /* height: 100vh; */
+    display: flex;
+    justify-content: space-around;
+}
+
+.info-container {
+    flex: 1;
+    /* background-color: turquoise; */
+    margin: 50px;
+    padding: 20px 30px;
+}
+
+.skill-container {
+    margin: 50px;
+    padding: 20px 30px;
+    flex: 1;
+    /* background-color: yellow; */
+}
+
+.info-lists {
+    /* background-color: aqua; */
+    line-height: 2.3rem;
+    list-style: none;
+}
+
+.info-item>span {
+    color: #888;
+}
+
+@media screen and (max-width: 1024px) {
+    .bio-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .info-container {
+        padding: 0 !important;
+        margin: 30px;
+    }
+    .info-lists {
+        padding: 0 !important;
+    }
+    .skills {
+        margin: 0 !important;
+    }
+    .skill-container {
+        margin: 30px;
+    }
+}
+
+
+/* ============================================================================================= */
+
+.skills {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.skills-bar {
+    padding: 25px 30px;
+}
+
+
+/* .skills-bar .bar {
+    margin: 25px 0;
+} */
+
+.skills-bar .bar .info span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.skills-bar .bar .info {
+    margin-bottom: 8px;
+    color: #07374a;
+}
+
+.skills-bar .bar .progress-line {
+    position: relative;
+    height: 10px;
+    width: 550px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+    position: absolute;
+    background: #25b79f;
+    height: 100%;
+    border-radius: 10px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.progress-line .node {
+    width: 80%;
+}
+
+.progress-line .clang {
+    width: 90%;
+}
+
+.progress-line .react {
+    width: 80%;
+}
+
+.progress-line .html {
+    width: 100%;
+}
+
+.progress-line .css {
+    width: 90%;
+}
+
+.bar .progress-line span::before {
+    position: absolute;
+    content: "";
+    height: 0;
+    right: 0;
+    top: -14px;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-style: #f0f0f0;
+    border-top-color: #07374a;
+}
+
+.bar .progress-line span::after {
+    position: absolute;
+    right: 0;
+    top: -28px;
+    color: #f0f0f0;
+    font-size: 12px;
+    font-weight: 700;
+    background: #07374a;
+    padding: 1px 8px;
+    border-radius: 3px;
+}
+
+.progress-line .node::after {
+    content: "4/5";
+}
+
+.progress-line .clang::after {
+    content: "4.5/5";
+}
+
+.progress-line .react::after {
+    content: "4/5";
+}
+
+.progress-line .html::after {
+    content: "5/5";
+}
+
+.progress-line .css::after {
+    content: "4.5/5";
+}
+
+@media screen and (max-width: 450px) {
+    .skill-container {
+        padding: 0;
+    }
+    .progress-line .node::after {
+        content: none;
+        display: none;
+    }
+    .progress-line .clang::after {
+        content: none;
+    }
+    .progress-line .react::after {
+        content: none;
+    }
+    .progress-line .html::after {
+        content: none;
+    }
+    .progress-line .css::after {
+        content: none;
+    }
+}
+
+
+/* ////........Media Query........//// */
+
+@media (max-width: 700px) {
+    .skills-bar .bar .progress-line {
+        width: 100%;
+    }
+}
+
+@media (max-width: 320px) {
+    .secondary-heading {
+        padding: 30px 0;
+    }
+    .skills-bar {
+        margin: 10px 0;
+    }
+}
+
+
+/* ============================================================================================= */

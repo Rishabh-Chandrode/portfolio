@@ -1,0 +1,55 @@
+.accomplishment-section {
+    /* height: 100vh; */
+    /* background-color: blue; */
+    font-family: 'Lora', serif;
+}
+
+.secondary-heading {
+    font-family: 'Lora', serif !important;
+    font-size: 2.3rem;
+    /* color: #cc005f; */
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.accomplishment-container {
+    /* height: 100vh; */
+    /* background-color: blueviolet; */
+    display: flex;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1024px) {
+    .accomplishment-container {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .project-container {
+        padding-left: 0 !important;
+    }
+    .info-lists {
+        padding: 0 !important;
+    }
+    .education-container {
+        padding: 0 !important;
+    }
+}
+
+.project-container {
+    /* background-color: brown; */
+    flex: 1;
+    margin: 50px;
+    padding: 20px 30px;
+}
+
+.education-container {
+    /* background-color: crimson; */
+    flex: 1;
+    margin: 50px;
+    padding: 20px 30px;
+}

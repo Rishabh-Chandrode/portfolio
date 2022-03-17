@@ -1,0 +1,112 @@
+.about {
+    /* background-color: gainsboro; */
+    /* height: 100vh; */
+    padding: 60px;
+    text-align: center;
+    display: block;
+    overflow: auto;
+}
+
+.about-heading {
+    font-family: 'Lora', serif;
+    font-size: 2.3rem;
+    color: #cc005f;
+    line-height: 1.565;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px) {
+    .about-content {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    img {
+        height: 200px !important;
+    }
+    .info {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+    }
+    .about {
+        padding: 30px;
+    }
+}
+
+img {
+    height: 350px;
+    border-radius: 20px;
+}
+
+.info {
+    flex: 0.7;
+    font-size: 1.5rem;
+    margin: 20px;
+    line-height: 2.5rem;
+    font-family: 'Lora', serif;
+    color: #888;
+    text-align: left;
+}
+
+@media screen and (max-width: 480px) {
+    .info {
+        margin: 0;
+        padding: 20px 0;
+    }
+}
+
+.btn-container {
+    align-items: center;
+}
+
+button {
+    z-index: 1;
+    position: relative;
+    font-size: inherit;
+    font-family: inherit;
+    /* color: white; */
+    padding: 0.5em 1em;
+    outline: none;
+    border: #cc005f 2px solid;
+    background-color: white;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out;
+    padding-bottom: 6px;
+}
+
+button::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background-color: #cc005f;
+    transform-origin: center;
+    transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+    transition: transform 0.45s ease-in-out;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #cc005f;
+    color: white;
+}
+
+button:hover::before {
+    transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
