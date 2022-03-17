@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.a4e90d6d.chunk.css",
-    "main.js": "/portfolio/static/js/main.8df31eef.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.8df31eef.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.5c2a92a9.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.5c2a92a9.js.map",
-    "static/js/2.64ff78d7.chunk.js": "/portfolio/static/js/2.64ff78d7.chunk.js",
-    "static/js/2.64ff78d7.chunk.js.map": "/portfolio/static/js/2.64ff78d7.chunk.js.map",
-    "static/js/3.74b904b7.chunk.js": "/portfolio/static/js/3.74b904b7.chunk.js",
-    "static/js/3.74b904b7.chunk.js.map": "/portfolio/static/js/3.74b904b7.chunk.js.map",
-    "index.html": "/portfolio/index.html",
-    "static/css/main.a4e90d6d.chunk.css.map": "/portfolio/static/css/main.a4e90d6d.chunk.css.map",
-    "static/js/2.64ff78d7.chunk.js.LICENSE.txt": "/portfolio/static/js/2.64ff78d7.chunk.js.LICENSE.txt",
-    "static/media/Resume.0264b1e2.pdf": "/portfolio/static/media/Resume.0264b1e2.pdf",
-    "static/media/header.css": "/portfolio/static/media/header-background.befe7c7c.jpg",
-    "static/media/wphoto.8efc7698.jpeg": "/portfolio/static/media/wphoto.8efc7698.jpeg"
+    "main.css": "/Rishabh-Chandrode/portfolio/static/css/main.a216a2fd.chunk.css",
+    "main.js": "/Rishabh-Chandrode/portfolio/static/js/main.25509dc7.chunk.js",
+    "main.js.map": "/Rishabh-Chandrode/portfolio/static/js/main.25509dc7.chunk.js.map",
+    "runtime-main.js": "/Rishabh-Chandrode/portfolio/static/js/runtime-main.6f048129.js",
+    "runtime-main.js.map": "/Rishabh-Chandrode/portfolio/static/js/runtime-main.6f048129.js.map",
+    "static/js/2.64ff78d7.chunk.js": "/Rishabh-Chandrode/portfolio/static/js/2.64ff78d7.chunk.js",
+    "static/js/2.64ff78d7.chunk.js.map": "/Rishabh-Chandrode/portfolio/static/js/2.64ff78d7.chunk.js.map",
+    "static/js/3.74b904b7.chunk.js": "/Rishabh-Chandrode/portfolio/static/js/3.74b904b7.chunk.js",
+    "static/js/3.74b904b7.chunk.js.map": "/Rishabh-Chandrode/portfolio/static/js/3.74b904b7.chunk.js.map",
+    "index.html": "/Rishabh-Chandrode/portfolio/index.html",
+    "static/css/main.a216a2fd.chunk.css.map": "/Rishabh-Chandrode/portfolio/static/css/main.a216a2fd.chunk.css.map",
+    "static/js/2.64ff78d7.chunk.js.LICENSE.txt": "/Rishabh-Chandrode/portfolio/static/js/2.64ff78d7.chunk.js.LICENSE.txt",
+    "static/media/Resume.0264b1e2.pdf": "/Rishabh-Chandrode/portfolio/static/media/Resume.0264b1e2.pdf",
+    "static/media/header.css": "/Rishabh-Chandrode/portfolio/static/media/header-background.befe7c7c.jpg",
+    "static/media/wphoto.8efc7698.jpeg": "/Rishabh-Chandrode/portfolio/static/media/wphoto.8efc7698.jpeg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5c2a92a9.js",
+    "static/js/runtime-main.6f048129.js",
     "static/js/2.64ff78d7.chunk.js",
-    "static/css/main.a4e90d6d.chunk.css",
-    "static/js/main.8df31eef.chunk.js"
+    "static/css/main.a216a2fd.chunk.css",
+    "static/js/main.25509dc7.chunk.js"
   ]
 }
