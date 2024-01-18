@@ -9,32 +9,31 @@ const HeroSection = () => {
       <div className='grid grid-cols-1 sm:grid-cols-12'>
         <div className='col-span-7 place-self-center text-center sm:text-left ' >
 
-          <h1 className='text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold' >
-            <span className='text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 ' >Hello, I&apos;m </span>
+          <h1 className='text-white mb-4 text-4xl  sm:text-4xl lg:text-6xl font-extrabold' >
+            <span className='text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600 ' >Hello, I&apos;m </span>
             <br/>
             <span>Rishabh Chandrode</span>
             <br/>
             <TypeAnimation
               sequence={[
-                // Same substring at the start will only be typed out once, initially
                 'Software Engineer',
-                1000, // wait 1s before replacing "Mice" with "Hamsters"
+                1000, 
                 'Competitive Coder',
                 1000,
                 'Full Stack developer',
                 1000,
-                
               ]}
               wrapper="span"
               speed={50}
-              
               repeat={Infinity}
             />
           </h1>
-          <p className='text-[#ADB7BE] text-base  sm:text-lg  lg:text-xl mb-6  ' >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id voluptatibus magnam dicta maiores sapiente placeat corrupti expedita et, sed laboriosam tempore impedit? Molestiae, nulla id!</p>
+          <p className='text-[#ADB7BE] text-base  sm:text-lg  lg:text-xl mb-6  ' >
+           
+            </p>
           <div>
-            <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-200 text-white'>Hire Me</button>
-            <button className='px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 hover:bg-slate-800 text-white  mt-3 ' >
+            <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>Hire Me</button>
+            <button className='px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-r from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-800 text-white  mt-3 ' >
               <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2' >Download CV</span>
             </button>
           </div>

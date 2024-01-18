@@ -8,37 +8,46 @@ const projects = [
         id:1,
         title:"Vchat",
         description:"social media web app",
-        imageUrl:"/images/projects/lakeview.png",
-        giturl:"/",
+        imageUrl:"/images/projects/vchat1.png",
+        giturl:"https://github.com/Rishabh-Chandrode/VChat",
         liveurl:"/",
         tag:["All","Web"]
     },
     {
         id:2,
-        title:"Vchat",
-        description:"social media web app",
-        imageUrl:"/images/projects/default.jpg",
-        giturl:"/",
-        liveurl:"/",
+        title:"Lakeview",
+        description:"Country club website",
+        imageUrl:"/images/projects/lakeview.png",
+        giturl:"https://github.com/Rishabh-Chandrode/Lakeview",
+        liveurl:"https://rishabh-chandrode.github.io/Lakeview/",
         tag:["All","Web"]
     },
     {
         id:3,
-        title:"Vchat",
-        description:"social media web app",
-        imageUrl:"/images/projects/default.jpg",
-        giturl:"/",
+        title:"PSpot",
+        description:"Parking space manager",
+        imageUrl:"/images/projects/pspot.png",
+        giturl:"https://github.com/Rishabh-Chandrode/PSpot",
         liveurl:"/",
         tag:["All","Web"]
     },
     {
         id:4,
-        title:"Vchat",
-        description:"social media web app",
+        title:"Blogs",
+        description:"Blogging platform",
         imageUrl:"/images/projects/default.jpg",
-        giturl:"/",
+        giturl:"https://github.com/Rishabh-Chandrode/blogging",
         liveurl:"/",
-        tag:["All"]
+        tag:["All","Web"]
+    },
+    {
+        id:5,
+        title:"BizzWhizz",
+        description:"Company portfolio",
+        imageUrl:"/images/projects/bizzwizz2.png",
+        giturl:"https://github.com/Rishabh-Chandrode/company",
+        liveurl:"https://rishabh-chandrode.github.io/company/",
+        tag:["All","Web"]
     },
 ]
 
