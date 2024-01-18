@@ -84,8 +84,9 @@ const ProjectSection = () => {
                 initial="initial" 
                 animate= {isInView? "animate":"initial" }
                 transition={{duration:0.5 , delay:index*0.5}}
+                key={project.id}
                 >
-                <ProjectCard key={project.id} project={project} />
+                <ProjectCard  project={project} />
             </motion.li>)
              )}
         </ul>
