@@ -16,22 +16,21 @@ const EmailSection = () => {
             subject: e.target.subject.value,
             message: e.target.message.value,
         }
-
-        const JSONData = JSON.stringify(data)
+        const JSONData = JSON.stringify(data);
         const endpoint = "/api/send";
         const options = {
             method: 'POST',
-           
+            headers: {
+                'Content-Type': 'application/json'
+                },
             body:JSONData,
         }
-
         const response = await fetch(endpoint,options);
-        const resData =  await response.json();
+        const resData = await response.json();
         console.log(resData)
         if(response.status === 200){
             console.log('Message Sent.')
         }
-
     }
 
 

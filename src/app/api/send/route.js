@@ -1,21 +1,12 @@
-// import { EmailTemplate } from '../../../components/EmailTemplate';
-
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
-
-
-export async function POST(req, res) {
-  
-
-  const data = await req.formData();
-  console.log(data);
-  const email = data.get('email');
-  const subject = data.get('subject');
-  const message = data.get('message');
+export async function POST(request) {
   try {
+    const body = await request.json();
+    const {email,subject,message} = body;
     const data = await resend.emails.send({
       from: "Portfolio@resend.dev",
       to: 'rishabhchandrode@gmail.com',
@@ -23,10 +14,10 @@ export async function POST(req, res) {
       html: `<div>
         ${email} 
         <br/>
+        <br/>
         ${message}
       </div>`,
     });
-
     return Response.json(data);
   } catch (error) {
     return Response.json({ error });
