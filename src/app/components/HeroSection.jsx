@@ -3,10 +3,15 @@ import React from 'react'
 import Image from 'next/image'
 import { TypeAnimation } from 'react-type-animation';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+
 
 const HeroSection = () => {
+
+  const resumelink = "https://drive.google.com/file/d/1BR4btHC56dYJkHIFWiDUcCn3BlsnfFb8/view?usp=drive_link"
+
   return (
-    <section>
+    <section id='Home' >
       <div className='grid grid-cols-1 sm:grid-cols-12'>
         <motion.div
         initial={{scale:0}}
@@ -37,9 +42,13 @@ const HeroSection = () => {
            
             </p>
           <div>
-            <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>Hire Me</button>
+            <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>
+              <Link href={"#EmailSection"} >Hire Me</Link>
+              </button>
             <button className='px-1 py-1 rounded-full w-full sm:w-fit bg-gradient-to-r from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-800 text-white  mt-3 ' >
-              <span className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2' >Download CV</span>
+              <span  className='block bg-[#121212] hover:bg-slate-800 rounded-full px-5 py-2' >
+                <Link href={resumelink} >Download Reseme</Link>
+              </span>
             </button>
           </div>
         </motion.div>
