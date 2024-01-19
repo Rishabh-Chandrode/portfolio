@@ -9,7 +9,7 @@ const projects = [
         id:1,
         title:"Vchat",
         description:"social media web app",
-        imageUrl:"/images/projects/vchat1.png",
+        imageUrl:"/images/projects/vchat2.png",
         giturl:"https://github.com/Rishabh-Chandrode/VChat",
         liveurl:"/",
         tag:["All","Web"]
