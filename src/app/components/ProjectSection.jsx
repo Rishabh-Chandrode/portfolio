@@ -6,16 +6,14 @@ import {motion, useInView} from "framer-motion";
 
 const projects = [
     {
-        id:1,
         title:"Vchat",
         description:"social media web app",
         imageUrl:"/images/projects/vchat2.png",
         giturl:"https://github.com/Rishabh-Chandrode/VChat",
-        liveurl:"/",
+        liveurl:"https://github.com/Rishabh-Chandrode/VChat",
         tag:["All","Web"]
     },
     {
-        id:2,
         title:"Lakeview",
         description:"Country club website",
         imageUrl:"/images/projects/lakeview.png",
@@ -24,25 +22,30 @@ const projects = [
         tag:["All","Web"]
     },
     {
-        id:3,
+        title:"Ecommerce",
+        description:"Ecommerce website",
+        imageUrl:"/images/projects/videoapp.png",
+        giturl:"https://github.com/Rishabh-Chandrode/videoapp",
+        liveurl:"https://video-subtitle-adder.onrender.com/",
+        tag:["All","Web"]
+    },
+    {
         title:"PSpot",
         description:"Parking space manager",
         imageUrl:"/images/projects/pspot.png",
         giturl:"https://github.com/Rishabh-Chandrode/PSpot",
-        liveurl:"/",
+        liveurl:"https://github.com/Rishabh-Chandrode/PSpot",
         tag:["All","Web"]
     },
     {
-        id:4,
         title:"Blogs",
         description:"Blogging platform",
         imageUrl:"/images/projects/default.jpg",
         giturl:"https://github.com/Rishabh-Chandrode/blogging",
-        liveurl:"/",
+        liveurl:"https://github.com/Rishabh-Chandrode/blogging",
         tag:["All","Web"]
     },
     {
-        id:5,
         title:"BizzWhizz",
         description:"Company portfolio",
         imageUrl:"/images/projects/bizzwizz2.png",
@@ -61,7 +64,7 @@ const cardVariants = {
 const ProjectSection = () => {
     const [tag,setTag] = useState("All")
     const ref = useRef(null);
-    const isInView = useInView(ref,{once:true});
+    const isInView = useInView(ref,{once:false});
     const handleTagChange = (newtag) => {
         setTag(newtag);
     }
@@ -72,24 +75,24 @@ const ProjectSection = () => {
 
 
   return (
-    <section id='ProjectSection' >
+    <section id='ProjectSection' className='pt-10 sm:text-sm' >
         <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12' >Projects</h2>
         <div className='text-white flex flex-row justify-center items-center gap-2 py-6 ' >
            <ProjectTag onClick={handleTagChange} name={"All"} isSelected={tag=="All"} />
            <ProjectTag onClick={handleTagChange} name={"Web"} isSelected={tag=="Web"} />
         </div>
-        <ul ref={ref} className='grid lg:grid-cols-2 md:grid-cols-1 gap-8 md:gap-12' >
+        <div ref={ref} className='grid lg:grid-cols-2 md:grid-cols-1 gap-8 md:gap-12' >
             {filteredProjects.map( (project, index) => 
-            (<motion.li variants={cardVariants} 
+            (<motion.div variants={cardVariants} 
                 initial="initial" 
                 animate= {isInView? "animate":"initial" }
-                transition={{duration:0.5 , delay:index*0.5}}
-                key={project.id}
+                transition={{duration:0.5 , delay:index*0.2}}
+                key={index+project.title}
                 >
                 <ProjectCard  project={project} />
-            </motion.li>)
+            </motion.div>)
              )}
-        </ul>
+        </div>
     </section>
   )
 }
