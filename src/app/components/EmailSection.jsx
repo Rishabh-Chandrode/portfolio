@@ -70,6 +70,11 @@ const EmailSection = () => {
                     <Link href={"https://www.linkedin.com/in/rishabh-chandrode/"} >
                         <Image src={LinkedinIcon} alt='Linkedin Icon' ></Image>
                     </Link>
+                    <Link href={"https://www.instagram.com/rishabh_chandrode/"} >
+                    <img width="48" height="48" src="https://img.icons8.com/fluency/48/instagram-new.png" alt="instagram-new"/>
+                    </Link>
+                    
+                    
                 </div>
             </div>
 

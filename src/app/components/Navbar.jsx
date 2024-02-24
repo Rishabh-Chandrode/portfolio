@@ -7,8 +7,20 @@ import NavLink from "./NavLink";
 
 const navlinks = [
     {
+        title:"Home",
+        path:"#HeroSection",
+    },
+    {
         title:"About",
         path:"#AboutSection",
+    },
+    {
+        title:"Skills",
+        path:"#skillsSection"
+    },
+    {
+        title:"Resume",
+        path:"#resume"
     },
     {
         title:" Projects",
@@ -45,15 +57,15 @@ const Navbar = () => {
                 <div className=" menu hidden md:block md:w-auto" id="navbar" >
                     <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 " >
                         {navlinks.map( (link,index) => 
-                            <li key={index}>
+                            <div key={index}>
                                 
-                                <NavLink title={link.title} href={link.path} />
-                            </li>
+                                <NavLink  title={link.title} href={link.path} />
+                            </div>
                          )}
                     </ul>
                 </div>
             </div>
-            {navbarOpen?<MenuOverlay links={navlinks} />:null}
+            {navbarOpen?<MenuOverlay  links={navlinks} />:null}
         </nav>
     )
 }
