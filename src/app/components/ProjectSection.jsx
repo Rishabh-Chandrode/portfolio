@@ -22,8 +22,8 @@ const projects = [
         tag:["All","Web"]
     },
     {
-        title:"Ecommerce",
-        description:"Ecommerce website",
+        title:"Video-Subtitle-Adder",
+        description:"Adds subtitle to video files",
         imageUrl:"/images/projects/videoapp.png",
         giturl:"https://github.com/Rishabh-Chandrode/videoapp",
         liveurl:"https://video-subtitle-adder.onrender.com/",
