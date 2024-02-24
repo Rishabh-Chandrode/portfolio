@@ -40,7 +40,7 @@ const AboutSection = () => {
         className='mt-4 md:mt-0 text-left flex flex-col h-full' >
           <h2 className='text-4xl font-bold text-white mb-4' >About Me</h2>
           <p className='text-base lg:text-lg ' >
-            Hello I'm Rishabh Chandrode, Senior student at University Institute of Technology RGPV Bhopal.
+            Hello I&apos;m Rishabh Chandrode, Senior student at University Institute of Technology RGPV Bhopal.
              Mainly skilled in  C++, JavaScript also proficient in data structures and algorithms. Have
             hands-on experience working on full stack projects based on technologies like React, Node.js, Express,
             MongoDB, SQL, FireBase, HTML, CSS etc. A team player and 
