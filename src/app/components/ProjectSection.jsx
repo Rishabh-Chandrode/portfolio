@@ -9,8 +9,8 @@ const projects = [
         title:"Vchat",
         description:"social media web app",
         imageUrl:"/images/projects/vchat2.png",
-        giturl:"https://github.com/Rishabh-Chandrode/VChat",
-        liveurl:"https://github.com/Rishabh-Chandrode/VChat",
+        giturl:"https://github.com/Rishabh-Chandrode/VChatv2",
+        liveurl:"https://vchatv2.vercel.app/",
         tag:["All","Web"]
     },
     {
