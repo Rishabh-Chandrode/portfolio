@@ -81,7 +81,7 @@ const Chatbot = () => {
         message: currentChats,
     }
     const JSONData = JSON.stringify(data);
-    const endpoint = "/api/send";
+    const endpoint = "/api/v1/chatbot";
     const options = {
         method: 'POST',
         headers: {
@@ -130,7 +130,7 @@ useEffect(() => {
        
        animate={chatbotOpen?"open":"close"}
        transition={0.3}
-      className={` flex flex-col text-black  chatbot box-border  h-96 w-72 relative rounded-lg rounded-br-none overflow-hidden bg-[#e8e8e8] ${chatbotOpen?"":"h-0 w-0"}  `}>
+      className={` flex flex-col text-black  chatbot box-border   relative rounded-lg rounded-br-none overflow-hidden bg-[#e8e8e8] ${chatbotOpen?"h-96 w-72":"h-0 w-0"}  `}>
         <div className=' bg-[#724ae8] p-2' >Chat with me.. (BETA)</div>
         <div className='chats h-full flex flex-col overflow-scroll no-scrollbar' >
           {chats.map((chat, index) => (
