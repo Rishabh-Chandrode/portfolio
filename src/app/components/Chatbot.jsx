@@ -127,7 +127,6 @@ useEffect(() => {
       
       <motion.div 
        variants={cardVariants}
-       
        animate={chatbotOpen?"open":"close"}
        transition={0.3}
       className={` flex flex-col text-black  chatbot box-border   relative rounded-lg rounded-br-none overflow-hidden bg-[#e8e8e8] ${chatbotOpen?"h-96 w-72":"h-0 w-0"}  `}>
@@ -135,7 +134,7 @@ useEffect(() => {
         <div className='chats h-full flex flex-col overflow-scroll no-scrollbar' >
           {chats.map((chat, index) => (
             <motion.div key={index}
-            
+             
             className={`chat flex ${chat.role === "assistant" ? "self-start" : "self-end"} box-border p-1 `}>
               <div className={`content  bg-white box-border text-sm p-2 rounded-lg ${chat.role==='assistant'?"rounded-bl-none mr-16":"rounded-br-none ml-16"}`} >
               <ReactMarkdown>{chat.content}</ReactMarkdown>
