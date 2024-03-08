@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef, useEffect, useState } from 'react'
 import Loader from './ui/Loader';
-import Input from './ui/input';
+
 import { AnimatePresence, motion, useInView } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import './Chatbot.css'
