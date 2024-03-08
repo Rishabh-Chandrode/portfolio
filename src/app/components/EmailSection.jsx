@@ -11,10 +11,11 @@ const EmailSection = () => {
     const [userEmail,setUserEmail] = useState("");
     const [userSubject,setUserSubject] = useState("");
     const [userMessage,setUserMessage] = useState("");
-
+    const [isSending,setIsSending] = useState(false);
 
     const handleSubmit = async (e)=> {
         e.preventDefault();
+        setIsSending(true);
         const data = {
             email: userEmail,
             subject: userSubject,
@@ -35,6 +36,7 @@ const EmailSection = () => {
             console.log('Message Sent.')
             shownotification();
         }
+        setIsSending(false);
     }
 
     const shownotification = () => {
@@ -126,10 +128,10 @@ const EmailSection = () => {
                         </textarea>
                     </div>
 
-                    <button type='submit'
+                    <button type='submit' disabled={isSending}
                         className='bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'
                     >
-                        Send Message 
+                        {isSending ? "Sending..." : "Send"}
                     </button>
                     {
                         emailSubmitted && (
