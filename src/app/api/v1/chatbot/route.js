@@ -17,11 +17,6 @@ export async function POST(req) {
   // console.log(messages);
   const currentMessageContent = messages[messages.length - 1].content;
 
-
-
-
-
-
   const client = await mongoClientPromise;
   const dbName = "Chatbot_Data";
   const collectionName = "embedded_data";
