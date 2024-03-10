@@ -81,7 +81,7 @@ const Chatbot = () => {
         message: currentChats,
     }
     const JSONData = JSON.stringify(data);
-    const endpoint = "/api/v1/chatbot";
+    const endpoint = "/api/send";
     const options = {
         method: 'POST',
         headers: {
@@ -98,7 +98,7 @@ const Chatbot = () => {
 }
 
 
-
+ 
 
 useEffect(() => {
   const handleBeforeUnload = async (event) => {
