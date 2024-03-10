@@ -1,28 +1,62 @@
 
 import OpenAI from "openai";
+import { OpenAIEmbeddings } from "@langchain/openai";
+import { MongoDBAtlasVectorSearch } from "@langchain/mongodb";
+import mongoClientPromise from '../../../lib/mongodb';
+
 
 const openai = new OpenAI(
   process.env.OPENAI_API_KEY
 );
 
-export const runtime = 'edge';
 
 export async function POST(req) {
-    const { messages } = await req.json();
-    // console.log(messages);
-    const currentMessageContent = messages[messages.length - 1].content;
-    
-  const vectorSearch = await fetch("http://localhost:3000/api/v1/vectorSearch", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
+
+
+  const { messages } = await req.json();
+  // console.log(messages);
+  const currentMessageContent = messages[messages.length - 1].content;
+
+
+
+
+
+
+  const client = await mongoClientPromise;
+  const dbName = "Chatbot_Data";
+  const collectionName = "embedded_data";
+  const collection = client.db(dbName).collection(collectionName);
+
+  const question = currentMessageContent;
+
+  const vectorStore = new MongoDBAtlasVectorSearch(
+    new OpenAIEmbeddings({
+      apiKey: process.env.OPENAI_API_KEY,
+      modelName: 'text-embedding-ada-002',
+      stripNewLines: true,
+    }), {
+    collection,
+    indexName: "vector_index",
+    textKey: "text",
+    embeddingKey: "embedding",
+  });
+
+  const retriever = vectorStore.asRetriever({
+    searchType: "mmr",
+    searchKwargs: {
+      fetchK: 5,
+      lambda: 0.1,
     },
-    body: currentMessageContent,
-  }).then((res) => res.json()).catch(console.error);
+  });
+
+
+
+  const vectorSearch = await retriever.getRelevantDocuments(question);
+
 
   
- 
-  
+
+
   const TEMPLATE = `
 
   You will act as a personal assistant of Rishabh Chandrode, your primary task is to answer the website visitor's inquiries about Rishabh. 
@@ -40,18 +74,23 @@ export async function POST(req) {
   ${JSON.stringify(vectorSearch[2].pageContent)}
 
   `;
-  
+
   // console.log(TEMPLATE);
 
-  
-  const aimessages =  [{ role: "system", content: TEMPLATE} ,...messages]
+
+  const aimessages = [{ role: "system", content: TEMPLATE }, ...messages]
   // console.log(aimessages);
   const completion = await openai.chat.completions.create({
-    messages:aimessages,
+    messages: aimessages,
     model: "gpt-3.5-turbo",
     temperature: 0.5,
   });
 
-  
+
   return Response.json({ message: completion.choices[0].message.content });
 }
+
+
+
+
+
