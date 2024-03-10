@@ -6,13 +6,13 @@ const openai = new OpenAI(
 );
 
 
-
+ 
 export async function POST(req) {
     const { messages } = await req.json();
     // console.log(messages);
     const currentMessageContent = messages[messages.length - 1].content;
     
-  const vectorSearch = await fetch("http://localhost:3000/api/v1/vectorSearch", {
+  const vectorSearch = await fetch("/api/v1/vectorSearch", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
