@@ -4,6 +4,8 @@ import Image from 'next/image'
 import TabButton from './TabButton';
 import { motion } from "framer-motion"
 
+
+
 const tabData = [
  
 ]
@@ -40,11 +42,7 @@ const AboutSection = () => {
         className='mt-4 md:mt-0 text-left flex flex-col h-full' >
           <h2 className='text-4xl font-bold text-white mb-4' >About Me</h2>
           <p className='text-base lg:text-lg ' >
-            Hello I&apos;m Rishabh Chandrode, Senior student at University Institute of Technology RGPV Bhopal.
-             Mainly skilled in  C++, JavaScript also proficient in data structures and algorithms. Have
-            hands-on experience working on full stack projects based on technologies like React, Node.js, Express,
-            MongoDB, SQL, FireBase, HTML, CSS etc. A team player and 
-            excited to work with others to create amazing applications. 
+          I&apos;m Rishabh, a software engineer with a melody in my heart and a mind for algorithms. By day, I build awesome web applications using the fullstack approach, and I&apos;m constantly sharpening my skills with data structures and algorithms. When I&apos;m not glued to the screen, you&apos;ll find me jamming out on my guitar, music is my way to unwind and unleash my creativity after a day of coding challenges. Whether it&apos;s tackling a complex problem with the perfect data structure or composing a sweet riff, I&apos;m passionate about making something cool!
           </p>
           
         </motion.div>

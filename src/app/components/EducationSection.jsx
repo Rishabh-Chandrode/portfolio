@@ -33,18 +33,16 @@ const EducationSection = () => {
               transition={{ duration: 0.5 }}
               className="resume-item">
               <h4>Software Development Engineer</h4>
-              <h5>2024 - Present</h5>
+              <h5>01/2024 - 04/2024</h5>
               <p><em>RapidQuest, Pune India </em></p>
               
               <ul className='list-disc pl-2 '>
-                <li > Developed and implemented a chatbot feature utilizing OpenAI API for natural language processing on customized AI
-                  models, enhancing user engagement and interaction within the application.</li>
+                <li >Developed a customizable chatbot platform using Python Flask and Jinja templating engine, enabling users to create and personalize their own chatbots in 50 % less time compared to traditional methods.</li>
                   <div ref={expref} ></div>
-                <li>Deployed Full stack python application using flask framework for seamless communication and data handling, ensuring
-                  efficient performance and responsiveness.</li>
+                <li>Implemented a retrieval system leveraging RAG architecture and a MongoDB database, reducing chatbot response time by 20% through efficient data access.</li>
                  
-                <li>Improved chatbot performance by 30% through fine-tuning techniques, resulting in a 20% increase in user engagement and
-                  satisfaction.</li>
+                <li>Integrated OpenAI&apos;s ChatGPT 3.5 model for advanced natural language processing, achieving a high user satisfaction rating of 85% on chatbot responses.</li>
+                <li>Deployed and debugged the chatbot application on the AWS cloud platform, ensuring an uptime exceeding 99.5% for user access.</li>
               </ul>
 
             </motion.div>

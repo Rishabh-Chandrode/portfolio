@@ -9,7 +9,7 @@ const openai = new OpenAI(
   process.env.OPENAI_API_KEY
 );
 
-
+console.log(process.env.OPENAI_API_KEY);
 export async function POST(req) {
 
 
