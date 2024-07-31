@@ -22,6 +22,14 @@ const projects = [
         tag:["All","Web"]
     },
     {
+        title:"Article Scraper",
+        description:"Article Scraper",
+        imageUrl:"/images/projects/default.jpg",
+        giturl:"https://github.com/Rishabh-Chandrode/ArticleScraper",
+        liveurl:"https://github.com/Rishabh-Chandrode/ArticleScraper",
+        tag:["All"]
+    },
+    {
         title:"Video-Subtitle-Adder",
         description:"Adds subtitle to video files",
         imageUrl:"/images/projects/videoapp.png",
