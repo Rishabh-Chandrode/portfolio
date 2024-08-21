@@ -28,9 +28,9 @@ const HeroSection = () => {
               sequence={[
                 'Software Engineer',
                 1000, 
-                'Competitive Coder',
+                'Coder',
                 1000,
-                'Full Stack developer',
+                'FullStack developer',
                 1000,
               ]}
               wrapper="span"
@@ -41,7 +41,7 @@ const HeroSection = () => {
           <p className='text-[#ADB7BE] text-base  sm:text-lg  lg:text-xl mb-6  ' >
            
             </p>
-          <div>
+          <div  >
             <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>
               <Link href={"#EmailSection"} >Connect</Link>
               </button>
@@ -58,14 +58,15 @@ const HeroSection = () => {
         animate={{x:0,opacity:1}}
         transition={{duration:0.5}}  
         className='col-span-5 place-self-center ' >
-          <div className='rounded-full bg-[#181818] mt-9 lg:mt-0 w-[250px] h-[340px] lg:w-[400px] lg:h-[400px] relative' >
+          {/* <div className='rounded-full bg-[#181818] mt-9 lg:mt-0 w-[250px] h-[340px] lg:w-[400px] lg:h-[400px] relative' > */}
+          <div className=' mt-9 lg:mt-0 w-[300px] h-[340px] sm:w-[250px] lg:w-[400px] lg:h-[400px] relative' >
 
             <Image
-              src="/images/IntroImg.png"
+              src="/images/r2.jpg"
               alt='Intro Image'
-              className='absolute transform  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 '
-              width={300}
-              height={300}
+              className=' rounded-tl-[20%] rounded-br-[20%] absolute transform  -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 '
+              width={800}
+              height={800}
             />
           </div>
         </motion.div>
