@@ -23,10 +23,18 @@ module.exports = {
           '0%': { transform: 'translateX(100px)', opacity: '0' },
           '100%': { transform: 'translateX(0)', opacity: '1' },
         },
+        scaleFadeIn: {
+          '0%': { opacity: '0', transform: 'scale(0)'},
+          '100%': {
+            opacity: '1',
+            transform: 'scale(1)'
+          }
+        },
       },
       animation: {
         'scale-up': 'scaleUp 0.5s ease-in-out forwards',
         'fade-in-right': 'fadeInRight 0.5s ease-in-out forwards',
+        'scale-fade-in': 'scaleFadeIn 0.5s ease-in-out forwards',
       },
     },
     colors : {
