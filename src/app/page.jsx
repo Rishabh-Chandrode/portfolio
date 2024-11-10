@@ -16,7 +16,7 @@ export default function Home() {
     className="flex min-h-screen flex-col bg-[#121212] scroll-smooth no-scrollbar">
         <Navbar/>
         <Chatbot/> 
-      <div className='container mt-24  mx-auto px-12 py-4 '>
+      <div className='container mt-24  mx-auto px-12 py-4 sm:px-2 '>
       <HeroSection />
       <AboutSection/>
       <Skills />
