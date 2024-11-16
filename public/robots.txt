@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://portfolio-rishabh-chandrodes-projects.vercel.app/
+
+# Sitemaps
+Sitemap: https://portfolio-rishabh-chandrodes-projects.vercel.app/sitemap.xml
