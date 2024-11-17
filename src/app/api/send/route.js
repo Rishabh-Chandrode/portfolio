@@ -1,7 +1,6 @@
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(request) {
   try {
@@ -9,23 +8,22 @@ export async function POST(request) {
     const {email,subject,message} = body;
     let template;
     if(email=== "form chatbot"){
-      template = `<div>
-      ${email} 
-      <br/>
-      <br/>
-      ${ message.map((chat)=>`<div>${chat.role} : ${chat.content}</div> <br/>`).join('')}
-    </div>`
+      template = 
+      `<div>
+        ${email} 
+        <br/>
+        <br/>
+        ${ message.map((chat)=>`<div>${chat.role} : ${chat.content}</div> <br/>`).join('')}
+      </div>`
     }else{
-      template = `<div>
-      ${email} 
-      <br/>
-      <br/>
-      ${ message }
-    </div>`;
+      template = 
+      `<div>
+        ${email} 
+        <br/>
+        <br/>
+        ${ message }
+      </div>`;
     }
-
-
-   
     const data = await resend.emails.send({
       from: "Portfolio@resend.dev",
       to: 'rishabhchandrode@gmail.com',

@@ -1,8 +1,6 @@
 'use client';
 import { TypeAnimation } from 'react-type-animation';
-
 export default function Type_Animation () {
-
     return (
     <TypeAnimation
         sequence={[
@@ -17,5 +15,4 @@ export default function Type_Animation () {
         speed={50}
         repeat={Infinity}
     />);
-
 }

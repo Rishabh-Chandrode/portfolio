@@ -46,8 +46,8 @@ const HeroSection = () => {
               src={profileImage}
               alt='Rishabh Chandrode Profile Image'
               className='rounded-tl-[20%] rounded-br-[20%] absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 '
-              width={800}
-              height={800}
+              width={400}
+              height={400}
               priority
               placeholder="blur"
             />
