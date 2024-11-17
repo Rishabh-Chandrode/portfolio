@@ -3,17 +3,14 @@ import AboutImage from "@/public/images/AboutMeImg.jpg";
 
 
 const AboutSection = () => {
-
-
-
 	return (
 		<section id='AboutSection' className='text-white'>
 			<div className=' md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 '>
 
 				<div className='overflow-hidden hidden md:block transition-transform transform duration-500 ease-in-out -translate-x-52 opacity-0 animate-fade-in-right' >
 					<Image src={AboutImage}
-						width={500}
-						height={500}
+						width={400}
+						height={400}
 						priority
 						placeholder="blur"
 						alt='Rishabh Chandrode Portfolio About me Image'

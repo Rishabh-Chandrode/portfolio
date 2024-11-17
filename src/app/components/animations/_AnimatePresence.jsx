@@ -1,8 +1,5 @@
-
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 export default function MotionDiv({ children, ...props }) {
-
-
     return (
         <AnimatePresence
             
@@ -12,7 +9,5 @@ export default function MotionDiv({ children, ...props }) {
             {children}
 
         </AnimatePresence>
-    )
-
-
+    );
 }

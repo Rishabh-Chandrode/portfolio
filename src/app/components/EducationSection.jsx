@@ -62,7 +62,6 @@ const EducationSection = () => {
               <h4>B.Tech - Computer Science and Engineering</h4>
               <h5>2020 - 2024</h5>
               <p><em>University Institute of Technology, RGPV Bhopal</em></p>
-              {/* <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> */}
             </motion.div>
             <motion.div
               variants={cardVariants}
@@ -73,10 +72,8 @@ const EducationSection = () => {
               <h4>HighSchool</h4>
               <h5>2017 - 2019</h5>
               <p><em>Kendriya Vidyalaya Khandwa</em></p>
-              {/* <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p> */}
             </motion.div>
           </div>
-
         </div>
 
       </div>

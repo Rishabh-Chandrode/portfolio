@@ -4,64 +4,7 @@ import ProjectCard from './ProjectCard'
 import ProjectTag from './ProjectTag'
 import {motion, useInView} from "framer-motion";
 
-const projects = [
-    {
-        title:"Vchat",
-        description:"social media web app",
-        imageUrl:"/images/projects/vchat2.png",
-        giturl:"https://github.com/Rishabh-Chandrode/VChatv2",
-        liveurl:"https://vchatv2.vercel.app/",
-        tag:["All","Web"]
-    },
-    {
-        title:"Lakeview",
-        description:"Country club website",
-        imageUrl:"/images/projects/lakeview.png",
-        giturl:"https://github.com/Rishabh-Chandrode/Lakeview",
-        liveurl:"https://rishabh-chandrode.github.io/Lakeview/",
-        tag:["All","Web"]
-    },
-    {
-        title:"Article Scraper",
-        description:"Article Scraper",
-        imageUrl:"/images/projects/default.jpg",
-        giturl:"https://github.com/Rishabh-Chandrode/ArticleScraper",
-        liveurl:"https://github.com/Rishabh-Chandrode/ArticleScraper",
-        tag:["All"]
-    },
-    {
-        title:"Video-Subtitle-Adder",
-        description:"Adds subtitle to video files",
-        imageUrl:"/images/projects/videoapp.png",
-        giturl:"https://github.com/Rishabh-Chandrode/videoapp",
-        liveurl:"https://video-subtitle-adder.onrender.com/",
-        tag:["All","Web"]
-    },
-    {
-        title:"PSpot",
-        description:"Parking space manager",
-        imageUrl:"/images/projects/pspot.png",
-        giturl:"https://github.com/Rishabh-Chandrode/PSpot",
-        liveurl:"https://github.com/Rishabh-Chandrode/PSpot",
-        tag:["All","Web"]
-    },
-    {
-        title:"Blogs",
-        description:"Blogging platform",
-        imageUrl:"/images/projects/default.jpg",
-        giturl:"https://github.com/Rishabh-Chandrode/blogging",
-        liveurl:"https://github.com/Rishabh-Chandrode/blogging",
-        tag:["All","Web"]
-    },
-    {
-        title:"BizzWhizz",
-        description:"Company portfolio",
-        imageUrl:"/images/projects/bizzwizz2.png",
-        giturl:"https://github.com/Rishabh-Chandrode/company",
-        liveurl:"https://rishabh-chandrode.github.io/company/",
-        tag:["All","Web"]
-    },
-]
+import projects from '@/components/data/projects';
 
 const cardVariants = {
     initial:{ y:50 , opacity:0 },

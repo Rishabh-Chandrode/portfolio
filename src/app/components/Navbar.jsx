@@ -57,10 +57,10 @@ const Navbar = () => {
                 <div className=" menu hidden md:block md:w-auto" id="navbar" >
                     <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0 " >
                         {navlinks.map( (link,index) => 
-                            <div key={index}>
+                            <li key={index}>
                                 
                                 <NavLink  title={link.title} href={link.path} />
-                            </div>
+                            </li>
                          )}
                     </ul>
                 </div>

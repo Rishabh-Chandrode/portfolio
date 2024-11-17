@@ -1,14 +1,21 @@
-import React from 'react'
 import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ProjectCard = ({project}) => {
     return (
         <div>
-          <div
-            className="h-52 md:h-72 rounded-t-xl relative group  "
-            style={{ background: `url(${project.imageUrl})`, backgroundSize: "cover" , backgroundPosition:"center" }}
-          >
+           <div className="relative h-52 md:h-72 rounded-t-xl overflow-hidden group">
+            <Image
+              src={project.imageUrl}
+              alt={project.title || 'Project Image'}
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
+              className="rounded-t-xl"
+              placeholder="blur"
+              priority={false}
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-25 opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <div className="overlay  items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0  group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
               <Link
                 href={project.giturl}
