@@ -1,5 +1,5 @@
-import cpp_icon from "@Svgs/cpp.svg"
-import c_icon from "@Svgs/c.svg"
+import cpp_icon from '@Svgs/cpp.svg';
+import c_icon from '@Svgs/c.svg';
 
 type SkillCategory = 'programming' | 'web' | 'db' | 'os' | 'misc';
 

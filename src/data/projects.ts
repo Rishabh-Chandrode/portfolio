@@ -7,60 +7,60 @@ import bizzWhizzImage from '@Images/projects/bizzwizz2.webp';
 
 const projects = [
     {
-        title: "Vchat",
-        description: "Social media web app",
+        title: 'Vchat',
+        description: 'Social media web app',
         imageUrl: vchatImage,
-        giturl: "https://github.com/Rishabh-Chandrode/VChatv2",
-        liveurl: "https://vchatv2.vercel.app/",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/VChatv2',
+        liveurl: 'https://vchatv2.vercel.app/',
+        tag: ['All', 'Web']
     },
     {
-        title: "Lakeview",
-        description: "Country club website",
+        title: 'Lakeview',
+        description: 'Country club website',
         imageUrl: lakeviewImage,
-        giturl: "https://github.com/Rishabh-Chandrode/Lakeview",
-        liveurl: "https://rishabh-chandrode.github.io/Lakeview/",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/Lakeview',
+        liveurl: 'https://rishabh-chandrode.github.io/Lakeview/',
+        tag: ['All', 'Web']
     },
     {
-        title: "Article Scraper",
-        description: "Article scraper",
+        title: 'Article Scraper',
+        description: 'Article scraper',
         imageUrl: defaultImage,
-        giturl: "https://github.com/Rishabh-Chandrode/ArticleScraper",
-        liveurl: "https://github.com/Rishabh-Chandrode/ArticleScraper",
-        tag: ["All"]
+        giturl: 'https://github.com/Rishabh-Chandrode/ArticleScraper',
+        liveurl: 'https://github.com/Rishabh-Chandrode/ArticleScraper',
+        tag: ['All']
     },
     {
-        title: "Video-Subtitle-Adder",
-        description: "Adds subtitle to video files",
+        title: 'Video-Subtitle-Adder',
+        description: 'Adds subtitle to video files',
         imageUrl: videoAppImage,
-        giturl: "https://github.com/Rishabh-Chandrode/videoapp",
-        liveurl: "https://video-subtitle-adder.onrender.com/",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/videoapp',
+        liveurl: 'https://video-subtitle-adder.onrender.com/',
+        tag: ['All', 'Web']
     },
     {
-        title: "PSpot",
-        description: "Parking space manager",
+        title: 'PSpot',
+        description: 'Parking space manager',
         imageUrl: pspotImage,
-        giturl: "https://github.com/Rishabh-Chandrode/PSpot",
-        liveurl: "https://github.com/Rishabh-Chandrode/PSpot",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/PSpot',
+        liveurl: 'https://github.com/Rishabh-Chandrode/PSpot',
+        tag: ['All', 'Web']
     },
     {
-        title: "Blogs",
-        description: "Blogging platform",
+        title: 'Blogs',
+        description: 'Blogging platform',
         imageUrl: defaultImage,
-        giturl: "https://github.com/Rishabh-Chandrode/blogging",
-        liveurl: "https://github.com/Rishabh-Chandrode/blogging",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/blogging',
+        liveurl: 'https://github.com/Rishabh-Chandrode/blogging',
+        tag: ['All', 'Web']
     },
     {
-        title: "BizzWhizz",
-        description: "Company portfolio",
+        title: 'BizzWhizz',
+        description: 'Company portfolio',
         imageUrl: bizzWhizzImage,
-        giturl: "https://github.com/Rishabh-Chandrode/company",
-        liveurl: "https://rishabh-chandrode.github.io/company/",
-        tag: ["All", "Web"]
+        giturl: 'https://github.com/Rishabh-Chandrode/company',
+        liveurl: 'https://rishabh-chandrode.github.io/company/',
+        tag: ['All', 'Web']
     },
 ];
 

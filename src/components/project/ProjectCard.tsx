@@ -37,6 +37,6 @@ const ProjectCard = ({project}) => {
           </div>
         </div>
       );
-}
+};
 
 export default ProjectCard;

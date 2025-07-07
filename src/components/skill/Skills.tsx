@@ -1,7 +1,7 @@
-"use client";
-import { useState } from 'react'
+'use client';
+import { useState } from 'react';
 import Image from 'next/image';
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { SkillCategory } from '@Types/skills/skills';
 import skills from '@Data/skills';
@@ -33,7 +33,7 @@ const Skills = () => {
                         <motion.div
                             variants={cardVariants}
                             initial="initial"
-                            animate={"animate"}
+                            animate={'animate'}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
 
                             key={skill.name + index} className="skill-container   p-2 w-full md:w-1/4 sm:w-1/3 ">
@@ -48,7 +48,7 @@ const Skills = () => {
                 </AnimatePresence>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Skills
+export default Skills;

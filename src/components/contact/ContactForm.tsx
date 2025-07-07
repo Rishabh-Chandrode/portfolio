@@ -1,12 +1,12 @@
-"use client";
-import {useState} from 'react'
+'use client';
+import React, {useState} from 'react';
 
 const ContactForm = () => {
 
     const [emailSubmitted,setEmailSubmitted] = useState(false);
-    const [userEmail,setUserEmail] = useState("");
-    const [userSubject,setUserSubject] = useState("");
-    const [userMessage,setUserMessage] = useState("");
+    const [userEmail,setUserEmail] = useState('');
+    const [userSubject,setUserSubject] = useState('');
+    const [userMessage,setUserMessage] = useState('');
     const [isSending,setIsSending] = useState(false);
 
     const handleSubmit = async (event :React.FormEvent<HTMLFormElement> )=> {
@@ -16,34 +16,33 @@ const ContactForm = () => {
             email: userEmail,
             subject: userSubject,
             message: userMessage,
-        }
+        };
         const JSONData = JSON.stringify(data);
-        const endpoint = "/api/send";
+        const endpoint = '/api/send';
         const options = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
                 },
             body:JSONData,
-        }
+        };
         const response = await fetch(endpoint,options);
-        const resData = await response.json();
+        await response.json();
         if(response.status === 200){
-            console.log('Message Sent.')
             shownotification();
         }
         setIsSending(false);
-    }
+    };
 
     const shownotification = () => {
-        setUserEmail("");
-        setUserSubject("");
-        setUserMessage("");
+        setUserEmail('');
+        setUserSubject('');
+        setUserMessage('');
         setEmailSubmitted(true);
         setTimeout(()=>{
-            setEmailSubmitted(false)
-        },5000)
-    }
+            setEmailSubmitted(false);
+        },5000);
+    };
 
   return (
     <form action="" className='flex flex-col ' onSubmit={handleSubmit}>
@@ -96,7 +95,7 @@ const ContactForm = () => {
     <button type='submit' disabled={isSending}
         className='bg-primary-600 hover:bg-primary-700 text-white font-medium py-2.5 px-5 rounded-lg w-full'
     >
-        {isSending ? "Sending..." : "Send"}
+        {isSending ? 'Sending...' : 'Send'}
     </button>
     {
         emailSubmitted && (
@@ -107,7 +106,7 @@ const ContactForm = () => {
     }
 
 </form>
-  )
-}
+  );
+};
 
-export default ContactForm
+export default ContactForm;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Type_Animation from '@/src/components/hero/HeaderTypeAnimation';
@@ -7,7 +7,7 @@ import profileImage from '@Images/r2.jpg';
 
 const HeroSection = () => {
 
-  const resumelink = "https://drive.google.com/file/d/1BR4btHC56dYJkHIFWiDUcCn3BlsnfFb8/view?usp=drive_link"
+  const resumelink = 'https://drive.google.com/file/d/1BR4btHC56dYJkHIFWiDUcCn3BlsnfFb8/view?usp=drive_link';
 
   return (
     <section id='Home' className=' lg:py-20 lg:px-20 ' >
@@ -25,7 +25,7 @@ const HeroSection = () => {
 
           </p>
           <div  >
-            <Link href={"#EmailSection"} passHref>
+            <Link href={'#EmailSection'} passHref>
               <button className='px-6 py-3 rounded-full w-full sm:w-fit mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>
                 Connect
               </button>
@@ -55,7 +55,7 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

@@ -1,4 +1,4 @@
-import '@Components/shared/loader/Loader.css'
+import '@Components/shared/loader/Loader.css';
 
 const Loader = () => {
     return (
@@ -10,7 +10,7 @@ const Loader = () => {
         <div className="typing-shadow"></div>
         <div className="typing-shadow"></div>
     </div>
-    )
-}
+    );
+};
 
-export default Loader
+export default Loader;

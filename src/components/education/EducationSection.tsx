@@ -1,7 +1,7 @@
-"use client";
-import './EducationSection.css'
-import React, { useEffect, useState, useRef } from 'react'
-import { AnimatePresence, motion, useInView } from "framer-motion";
+'use client';
+import './EducationSection.css';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
 const cardVariants = {
   initial: { x: 50, opacity: 0 },
@@ -29,7 +29,7 @@ const EducationSection = () => {
             <motion.div
               variants={cardVariants}
               initial="initial"
-              animate={isexpInView ? "animate" : "initial"}
+              animate={isexpInView ? 'animate' : 'initial'}
               transition={{ duration: 0.5 }}
               className="resume-item">
               <h4>Software Development Engineer</h4>
@@ -56,7 +56,7 @@ const EducationSection = () => {
             <motion.div
               variants={cardVariants}
               initial="initial"
-              animate={iseduInView ? "animate" : "initial"}
+              animate={iseduInView ? 'animate' : 'initial'}
               transition={{ duration: 0.5 }}
               className="resume-item">
               <h4>B.Tech - Computer Science and Engineering</h4>
@@ -66,7 +66,7 @@ const EducationSection = () => {
             <motion.div
               variants={cardVariants}
               initial="initial"
-              animate={iseduInView ? "animate" : "initial"}
+              animate={iseduInView ? 'animate' : 'initial'}
               transition={{ duration: 0.5 }}
               className="resume-item">
               <h4>HighSchool</h4>
@@ -78,7 +78,7 @@ const EducationSection = () => {
 
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EducationSection
+export default EducationSection;

@@ -7,14 +7,14 @@ export async function POST(request) {
     const body = await request.json();
     const {email,subject,message} = body;
     let template;
-    if(email=== "form chatbot"){
+    if(email=== 'form chatbot'){
       template = 
       `<div>
         ${email} 
         <br/>
         <br/>
         ${ message.map((chat)=>`<div>${chat.role} : ${chat.content}</div> <br/>`).join('')}
-      </div>`
+      </div>`;
     }else{
       template = 
       `<div>
@@ -25,7 +25,7 @@ export async function POST(request) {
       </div>`;
     }
     const data = await resend.emails.send({
-      from: "Portfolio@resend.dev",
+      from: 'Portfolio@resend.dev',
       to: 'rishabhchandrode@gmail.com',
       subject: subject ,
       html: template,

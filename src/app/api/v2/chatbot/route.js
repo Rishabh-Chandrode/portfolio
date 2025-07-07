@@ -6,8 +6,6 @@ const groq = new Groq({
 
 export async function POST(req) {
   const { messages } = await req.json();
-  const currentMessageContent = messages[messages.length - 1].content;
-  const question = currentMessageContent;
 
   const TEMPLATE = `
   You will act as a personal assistant of Rishabh Chandrode, your primary task is to answer the website visitor's inquiries about Rishabh. 
@@ -22,12 +20,11 @@ export async function POST(req) {
 
   `;
 
-  const aimessages = [{ role: "system", content: TEMPLATE }, ...messages]
+  const aimessages = [{ role: 'system', content: TEMPLATE }, ...messages];
   const chatCompletion = await groq.chat.completions.create({
     messages: aimessages,
     model: 'llama3-8b-8192',
   });
-  console.log(chatCompletion.choices[0].message.content);
   return Response.json({ message: chatCompletion.choices[0].message.content });
 }
 

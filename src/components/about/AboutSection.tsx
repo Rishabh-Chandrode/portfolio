@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import AboutImage from "@Images/AboutMeImg.jpg";
+import AboutImage from '@Images/AboutMeImg.jpg';
 
 
 const AboutSection = () => {
@@ -32,7 +32,7 @@ const AboutSection = () => {
 
 			</div>
 		</section>
-	)
-}
+	);
+};
 
-export default AboutSection
+export default AboutSection;
