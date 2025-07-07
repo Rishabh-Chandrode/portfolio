@@ -1,24 +1,22 @@
 // Types
 import { Skill, SkillCategory } from '@Types/skills/skills';
 
-// SVGs
-import cpp_icon from '@Svgs/cpp.svg';
-import c_icon from '@Svgs/c.svg';
-import python_icon from '@Svgs/python.svg';
-import html_icon from '@Svgs/html.svg';
-import css_icon from '@Svgs/css.svg';
-import javascript_icon from '@Svgs/javascript.svg';
-import react_icon from '@Svgs/react.svg';
-import node_icon from '@Svgs/nodejs.svg';
-import express_icon from '@Svgs/express.svg';
-import mongodb_icon from '@Svgs/mongodb.svg';
-import mysql_icon from '@Svgs/mysql.svg';
-import linux_icon from '@Svgs/linux.svg';
-import windows_icon from '@Svgs/windows.svg';
-import git_icon from '@Svgs/git.svg';
-import firebase_icon from '@Svgs/firebase.svg';
-import dsa_icon from '@Svgs/data-structure.svg';
-import algorithm_icon from '@Svgs/algorithm.svg';
+import cpp_icon from '@Images/logos/skills/cpp.png';
+import c_icon from '@Images/logos/skills/c.png';
+import python_icon from '@Images/logos/skills/python.png';
+import html_icon from '@Images/logos/skills/html.png';
+import css_icon from '@Images/logos/skills/css.png';
+import javascript_icon from '@Images/logos/skills/javascript.png';
+import react_icon from '@Images/logos/skills/react.png';
+import node_icon from '@Images/logos/skills/node.png';
+import express_icon from '@Images/logos/skills/express.png';
+import mongodb_icon from '@Images/logos/skills/mongodb.png';
+import mysql_icon from '@Images/logos/skills/sql.png';
+import linux_icon from '@Images/logos/skills/linux.png';
+import windows_icon from '@Images/logos/skills/windows.png';
+import git_icon from '@Images/logos/skills/git.png';
+import dsa_icon from '@Images/logos/skills/data-structure.png';
+import algorithm_icon from '@Images/logos/skills/algorithm.png';
 
 const skills: Record<SkillCategory, Skill[]> = {
   programming: [
@@ -85,10 +83,6 @@ const skills: Record<SkillCategory, Skill[]> = {
     {
       name: 'Git',
       icon: git_icon
-    },
-    {
-      name: 'Firebase',
-      icon: firebase_icon
     },
     {
       name: 'Data Structure',

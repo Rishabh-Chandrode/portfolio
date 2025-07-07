@@ -6,14 +6,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SkillCategory } from '@Types/skills/skills';
 import skills from '@Data/skills';
 
-const cardVariants = {
-    initial: { y: 50, opacity: 0 },
-    animate: { y: 0, opacity: 1 }
-};
-
-
 const Skills = () => {
     const [currentCategory, setCurrentCategory] = useState<SkillCategory>('programming');
+    
     return (
         <section id='skillsSection' className=' pt-11'>
             <div className="section-title font-bold text-2xl my-5 ">
@@ -31,15 +26,14 @@ const Skills = () => {
                 <AnimatePresence>
                     {skills[currentCategory].map((skill, index) => (
                         <motion.div
-                            variants={cardVariants}
-                            initial="initial"
-                            animate={'animate'}
+                            initial={{ y: 50, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
 
                             key={skill.name + index} className="skill-container   p-2 w-full md:w-1/4 sm:w-1/3 ">
                             <div className=' p-3 bg-white/[0.08] flex items-center rounded-sm h-14 box-border '>
                                 <div className='px-1' >
-                                    <Image src={skill.icon} alt={`${skill.name} logo`} />
+                                    <Image src={skill.icon} className=' w-8' alt={`${skill.name} logo`} />
                                 </div>
                                 <h3>{skill.name}</h3>
                             </div>
