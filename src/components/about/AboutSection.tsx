@@ -1,13 +1,15 @@
 import Image from 'next/image';
 import AboutImage from '@Images/AboutMeImg.jpg';
 
+import '@Components/about/AboutSection.scss';
+
 
 const AboutSection = () => {
 	return (
-		<section id='AboutSection' className='text-white'>
-			<div className=' md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16 '>
+		<section id='AboutSection'>
+			<div className='about_section'>
 
-				<div className='overflow-hidden hidden md:block transition-transform transform duration-500 ease-in-out -translate-x-52 opacity-0 animate-fade-in-right' >
+				<div className='image_wrapper' >
 					<Image src={AboutImage}
 						width={400}
 						height={400}
@@ -17,9 +19,9 @@ const AboutSection = () => {
 					/>
 				</div>
 
-				<div className='mt-4 md:mt-0 text-left flex flex-col h-full animate-scale-fade-in' >
-					<h2 className='text-4xl font-bold text-white mb-4' >About Me</h2>
-					<p className='text-base lg:text-lg text-justify' >
+				<div className='content' >
+					<h2 className='title' >About Me</h2>
+					<p className='text' >
 						Hi, I&apos;m Rishabh Chandrode from Khandwa, MP. I&apos;ve earned my bachelor&apos;s degree in Computer Science and Engineering from UIT RGPV, Bhopal, and have been passionate about software development ever since. I&apos;ve had the opportunity to work as a software developer engineer, where I gained hands-on experience building scalable and efficient applications across various tech stacks. Whether it&apos;s frontend, backend, or cloud, I enjoy the entire process of turning ideas into real, working software.
 						<br />
 						<br />

@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import './globals.css';
+import './globals.scss';
 
 export const metadata = {
 	title: 'Rishabh Chandrode',
