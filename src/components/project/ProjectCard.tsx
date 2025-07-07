@@ -1,8 +1,9 @@
 import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Project } from '@Types/project/project';
 
-const ProjectCard = ({project}) => {
+const ProjectCard = ({project} : {project: Project}) => {
     return (
         <div>
            <div className="relative h-52 md:h-72 rounded-t-xl overflow-hidden group">

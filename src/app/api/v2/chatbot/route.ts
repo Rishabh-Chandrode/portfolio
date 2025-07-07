@@ -4,7 +4,7 @@ const groq = new Groq({
     apiKey: process.env['GROQ_API_KEY'], 
 });
 
-export async function POST(req) {
+export async function POST(req: Request) {
   const { messages } = await req.json();
 
   const TEMPLATE = `

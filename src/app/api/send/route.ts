@@ -1,8 +1,9 @@
+import { ChatMessage } from '@Types/api/send';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export async function POST(request) {
+export async function POST(request : Request) {
   try {
     const body = await request.json();
     const {email,subject,message} = body;
@@ -13,7 +14,7 @@ export async function POST(request) {
         ${email} 
         <br/>
         <br/>
-        ${ message.map((chat)=>`<div>${chat.role} : ${chat.content}</div> <br/>`).join('')}
+        ${ message.map((chat: ChatMessage)=>`<div>${chat.role} : ${chat.content}</div> <br/>`).join('')}
       </div>`;
     }else{
       template = 

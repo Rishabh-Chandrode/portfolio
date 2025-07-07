@@ -1,5 +1,5 @@
 'use client';
-import { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import {motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 
@@ -8,6 +8,7 @@ import Loader from '@/src/components/shared/loader/Loader';
 import Image from 'next/image';
 import chatbot_image from '@Images/logos/chatbot_logo.png';
 import send_icon from '@Images/logos/send.png';
+import { ChatMessage } from '@/src/types/shared/types';
 
 const cardVariants = {
   open:{ scale:1, x:0 , y:0,
@@ -22,8 +23,8 @@ const Chatbot = () => {
   const [chatbotOpen, setChatbotOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const lastChatRef = useRef(null);
-  const [chats, setChats] = useState([
+  const lastChatRef = useRef<HTMLDivElement | null>(null);
+  const [chats, setChats] = useState<ChatMessage[]>([
     {
       role: 'assistant',
       content: 'hello, welcome to my website'
@@ -31,7 +32,7 @@ const Chatbot = () => {
   ]);
 
 
-  async function askgpt(newmessages) {
+  async function askgpt(newmessages: ChatMessage[]) {
     const response = await fetch('/api/v2/chatbot', {
       method: 'POST',
       body: JSON.stringify({ messages: newmessages }),
@@ -45,7 +46,7 @@ const Chatbot = () => {
   }
 
 
-  const handlesubmit = async (e) => {
+  const handlesubmit = async (e: React.MouseEvent<HTMLButtonElement> | React.KeyboardEvent<HTMLInputElement>) => {
     if (query === '') return;
     e.preventDefault();
     const newmessages = [...chats, { role: 'user', content: query }];
@@ -64,7 +65,7 @@ const Chatbot = () => {
   }, [chats]);
 
 
-  const sendchats = async (e, currentChats)=> {
+  const sendchats = async (currentChats: ChatMessage[])=> {
     const data = {
         email: 'form chatbot',
         subject: 'User chat history',
@@ -88,11 +89,10 @@ const Chatbot = () => {
 };
 
 useEffect(() => {
-  const handleBeforeUnload = async (event) => {
-    event.preventDefault();
+  const handleBeforeUnload = async () => {
     const currentChats = chats;
     if(currentChats.length === 1) return;
-    await sendchats(event, currentChats);
+    await sendchats(currentChats);
   };
   window.addEventListener('beforeunload', handleBeforeUnload);
   return () => {
