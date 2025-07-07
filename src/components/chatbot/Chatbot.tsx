@@ -3,7 +3,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import {motion } from 'framer-motion';
 import ReactMarkdown from 'react-markdown';
 
-import Loader from '@/src/components/shared/loader/Loader';
+import Loader from '@Components/shared/loader/Loader';
 
 import Image from 'next/image';
 import chatbot_image from '@Images/logos/chatbot_logo.png';
