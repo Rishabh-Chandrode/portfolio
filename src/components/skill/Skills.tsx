@@ -1,12 +1,52 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import { SkillCategory } from "@Types/skills/skills";
 import skills from "@Data/skills";
 
-import Skill from '@Components/skill/skill';
+// import Skill from '@Components/skill/skill';
+import dynamic from "next/dynamic";
+import "@Components/skill/Skills.scss";
+
+const SkillWrapper = dynamic(() => import('@/src/components/skill/SkillWrapper'), {
+    ssr:false,
+    loading: () =><>
+                {skills.map((skill, index) => (
+                    <div key={index} className="skill">
+                    <div className="skill-icon">
+                        <Image
+                            src={skill.icon}
+                            className="icon-image"
+                            alt={`${skill.name} logo`}
+                        />
+                    </div>
+                    <h3>{skill.name}</h3>
+                    </div>
+                ))}</>
+            
+})
+
+function staticSkill() {
+
+    return (
+        <div>
+            {skills.map((skill, index) => (
+                <div key={index} className="skill">
+                <div className="skill-icon">
+                    <Image
+                        src={skill.icon}
+                        className="icon-image"
+                        alt={`${skill.name} logo`}
+                    />
+                </div>
+                <h3>{skill.name}</h3>
+                </div>
+            ))}
+        </div>
+    )
+}
 
 const Skills = () => {
 	const [currentCategory, setCurrentCategory] =useState<SkillCategory>("all");
@@ -63,9 +103,7 @@ const Skills = () => {
 
 			<div className="skills flex flex-wrap">
 				<AnimatePresence>
-					{filtered_skills.map((skill, index) => (
-                        <Skill key={`${currentCategory}-${skill.name}`} skill={skill} index={index}/>
-					))}
+                    <SkillWrapper skills={filtered_skills}  currentCategory={currentCategory}/>
 				</AnimatePresence>
 			</div>
 		</section>

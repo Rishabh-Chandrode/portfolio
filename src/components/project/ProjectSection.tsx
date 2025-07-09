@@ -26,7 +26,7 @@ const ProjectSection = () => {
     <section id='ProjectSection' className='pt-10 sm:text-sm' >
         <h2 className='text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12' >Projects</h2>
         <div className='text-white flex flex-row justify-center items-center gap-2 py-6 ' >
-           <button onClick={() => { handleTagChange('All');}} className={` ${tag=='All' ? 'text-white bg-primary-700' : 'text-[#ABD7BE] border-slate-600 hover:border-white'} rounded-full border-2  px-4 py-2 text-xl cursor-pointer`} >
+            <button onClick={() => { handleTagChange('All');}} className={` ${tag=='All' ? 'text-white bg-primary-700' : 'text-[#ABD7BE] border-slate-600 hover:border-white'} rounded-full border-2  px-4 py-2 text-xl cursor-pointer`} >
                 All
             </button>
             <button onClick={() => { handleTagChange('Web');}} className={` ${tag=='Web' ? 'text-white bg-primary-700' : 'text-[#ABD7BE] border-slate-600 hover:border-white'} rounded-full border-2  px-4 py-2 text-xl cursor-pointer`} >
