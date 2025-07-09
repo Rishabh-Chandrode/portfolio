@@ -35,17 +35,21 @@ const ProjectSection = () => {
         </div>
         <div ref={ref} className='grid lg:grid-cols-2 md:grid-cols-1 gap-8 md:gap-12' >
             {filteredProjects.map( (project, index) => 
-            (<motion.div variants={cardVariants} 
-                initial="initial" 
+            ( motion ? <motion.div variants={cardVariants} 
+                initial='false' 
                 animate= {isInView? 'animate':'initial' }
                 transition={{duration:0.5 , delay:index*0.2}}
                 key={index+project.title}
                 >
                 <ProjectCard  project={project} />
-            </motion.div>)
-             )}
+            </motion.div>
+            :
+            <ProjectCard  project={project} />
+        )
+            )}
         </div>
     </section>
-);};
+    );
+};
 
 export default ProjectSection;

@@ -22,13 +22,29 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"],
-      "@Components/*": ["./src/components/*"],
-      "@Data/*": ["./src/data/*"],
-      "@Images/*": ["./src/assets/images/*"],
-      "@Svgs/*" : ["./src/assets/svgs/*"],
-      "@Types/*": ["./src/types/*"]
-    }
+      "@/*": [
+        "./*"
+      ],
+      "@Components/*": [
+        "./src/components/*"
+      ],
+      "@Data/*": [
+        "./src/data/*"
+      ],
+      "@Images/*": [
+        "./src/assets/images/*"
+      ],
+      "@Svgs/*": [
+        "./src/assets/svgs/*"
+      ],
+      "@Types/*": [
+        "./src/types/*"
+      ],
+      "@Styles/*": [
+        "./src/styles/*"
+      ]
+    },
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

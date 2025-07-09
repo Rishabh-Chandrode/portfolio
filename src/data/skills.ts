@@ -1,5 +1,5 @@
 // Types
-import { Skill, SkillCategory } from '@Types/skills/skills';
+import { Skill } from '@Types/skills/skills';
 
 import cpp_icon from '@Images/logos/skills/cpp.png';
 import c_icon from '@Images/logos/skills/c.png';
@@ -18,81 +18,88 @@ import git_icon from '@Images/logos/skills/git.png';
 import dsa_icon from '@Images/logos/skills/data-structure.png';
 import algorithm_icon from '@Images/logos/skills/algorithm.png';
 
-const skills: Record<SkillCategory, Skill[]> = {
-  programming: [
-    {
-      name: 'C++',
-      icon: cpp_icon
-    },
-    {
-      name: 'C',
-      icon: c_icon
-    },
-    {
-      name: 'Python',
-      icon: python_icon
-    },
-  ],
-  web: [
-    {
-      name: 'HTML',
-      icon: html_icon
-    },
-    {
-      name: 'CSS',
-      icon: css_icon
-    },
-    {
-      name: 'JavaScript',
-      icon: javascript_icon
-    },
-    {
-      name: 'React',
-      icon: react_icon
-    },
-    {
-      name: 'Node.js',
-      icon: node_icon
-    },
-    {
-      name: 'Express.js',
-      icon: express_icon
-    },
-  ],
-  db: [
-    {
-      name: 'MongoDB',
-      icon: mongodb_icon
-    },
-    {
-      name: 'MySQL',
-      icon: mysql_icon
-    },
-  ],
-  os: [
-    {
-      name: 'Linux',
-      icon: linux_icon
-    },
-    {
-      name: 'Windows',
-      icon: windows_icon
-    },
-  ],
-  misc: [
-    {
-      name: 'Git',
-      icon: git_icon
-    },
-    {
-      name: 'Data Structure',
-      icon: dsa_icon
-    },
-    {
-      name: 'Algorithm',
-      icon: algorithm_icon
-    },
-  ],
-};
+
+const skills: Skill[] = [
+  {
+    name: 'C++',
+    icon: cpp_icon,
+    tag: ['all', 'programming'],
+  },
+  {
+    name: 'C',
+    icon: c_icon,
+    tag: ['all', 'programming'],
+  },
+  {
+    name: 'Python',
+    icon: python_icon,
+    tag: ['all', 'programming'],
+  },
+  {
+    name: 'HTML',
+    icon: html_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'CSS',
+    icon: css_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'JavaScript',
+    icon: javascript_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'React',
+    icon: react_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'Node.js',
+    icon: node_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'Express.js',
+    icon: express_icon,
+    tag: ['all', 'web'],
+  },
+  {
+    name: 'MongoDB',
+    icon: mongodb_icon,
+    tag: ['all', 'db'],
+  },
+  {
+    name: 'MySQL',
+    icon: mysql_icon,
+    tag: ['all', 'db'],
+  },
+  {
+    name: 'Linux',
+    icon: linux_icon,
+    tag: ['all', 'os'],
+  },
+  {
+    name: 'Windows',
+    icon: windows_icon,
+    tag: ['all', 'os'],
+  },
+  {
+    name: 'Git',
+    icon: git_icon,
+    tag: ['all', 'misc'],
+  },
+  {
+    name: 'Data Structure',
+    icon: dsa_icon,
+    tag: ['all', 'misc'],
+  },
+  {
+    name: 'Algorithm',
+    icon: algorithm_icon,
+    tag: ['all', 'misc'],
+  },
+];
 
 export default skills;

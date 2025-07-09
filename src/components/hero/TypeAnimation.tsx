@@ -1,5 +1,12 @@
 'use client';
-import { TypeAnimation } from 'react-type-animation';
+
+import dynamic from 'next/dynamic';
+
+const TypeAnimation = dynamic(() => import('react-type-animation').then(mod => mod.TypeAnimation), {
+    ssr: false,
+    loading: () => <span>Software Engineer</span>,
+});
+
 export default function Type_Animation () {
     return (
     <TypeAnimation
@@ -8,7 +15,7 @@ export default function Type_Animation () {
         1000, 
         'Coder',
         1000,
-        'FullStack developer',
+        'Motoring Aficionado',
         1000,
         ]}
         wrapper="span"
@@ -16,3 +23,4 @@ export default function Type_Animation () {
         repeat={Infinity}
     />);
 }
+
