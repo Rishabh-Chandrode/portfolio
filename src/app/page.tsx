@@ -3,10 +3,10 @@ import Navbar from '@Components/navbar/Navbar';
 import Chatbot from '@Components/chatbot/Chatbot';
 import AboutSection from '@Components/about/AboutSection';
 import Skills from '@Components/skill/Skills';
-import EducationSection from '@Components/education/EducationSection';
 import ProjectSection from '@Components/project/ProjectSection';
 import EmailSection from '@Components/contact/EmailSection';
 import Footer from '@Components/footer/Footer';
+import ResumeSection from '@/src/components/resume/ResumeSection';
 
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection/>
       <Skills />
-      <EducationSection/>
+      <ResumeSection/>
       <ProjectSection/>
       <EmailSection/> 
       </div>
