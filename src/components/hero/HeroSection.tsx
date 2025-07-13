@@ -13,14 +13,15 @@ const HeroSection = () => {
 
   return (
     <section id="home">
-      <div className="hero_wrapper">
         <div className="hero_text">
           <h1>
             <span className="text_gradient">Hello, I&apos;m</span>
             <br />
             <span>Rishabh Chandrode</span>
             <br />
-            <Type_Animation />
+            <div className="animated_text">
+              <Type_Animation />
+            </div>
           </h1>
           <p>
             {/* You can add your description here */}
@@ -38,19 +39,16 @@ const HeroSection = () => {
         </div>
 
         <div className="hero_image">
-          <div className="image_wrapper">
             <Image
+              fill
               src={profileImage}
               alt="Rishabh Chandrode Profile Image"
               className="profile_image"
-              width={400}
-              height={400}
               priority
               placeholder="blur"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
-          </div>
         </div>
-      </div>
     </section>
   );
 };

@@ -1,10 +1,10 @@
 'use client';
-import Image from "next/image";
-import { Skill as Skill_T } from "@Types/skills/skills";
+import Image from 'next/image';
+import { Skill as Skill_T } from '@Types/skills/skills';
 
-import {motion} from "framer-motion";
+import {motion} from 'framer-motion';
 
-import "@Components/skill/Skills.scss";
+import '@Components/skill/Skills.scss';
 
 const Skill = ({ skill, index }: { skill: Skill_T, index: number }) => {
 	return (
@@ -19,6 +19,8 @@ const Skill = ({ skill, index }: { skill: Skill_T, index: number }) => {
                     src={skill.icon}
                     className="icon-image"
                     alt={`${skill.name} logo`}
+					height={32}
+					width={32}
                 />
             </div>
             <h3>{skill.name}</h3>

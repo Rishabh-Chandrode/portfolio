@@ -1,175 +1,151 @@
-@use '@Styles/colours' as *;
+@use "@Styles/shared/colours" as *;
+@use "../../styles/shared/responsive" as *;
+@use "../../styles/shared/typography" as *;
 
 #home {
-  padding: 5rem 0;
+	@include max-width-responsive;
 
-  @media (min-width: 1024px) {
-    padding: 5rem;
-  }
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 1rem;
+	margin-top: 5rem;
 
-  .hero_wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+	@media (min-width: 768px) {
+		flex-direction: row;
+	}
 
-    @media (min-width: 768px) {
-      flex-direction: row;
-    }
+	.hero_text {
+		grid-column: span 7;
+		place-self: center;
+		text-align: center;
+		overflow: hidden;
+		transform: scale(0);
+		animation: scale-up 0.4s forwards;
 
-    .hero_text {
-      grid-column: span 7;
-      place-self: center;
-      text-align: center;
-      overflow: hidden;
-      transform: scale(0);
-      animation: scale-up 0.4s forwards;
+		@media (min-width: 640px) {
+			text-align: left;
+		}
 
-      @media (min-width: 640px) {
-        text-align: left;
-      }
+		h1 {
+			color: white;
+			margin-bottom: 1rem;
+			@include h1;
 
-      h1 {
-        color: white;
-        margin-bottom: 1rem;
-        font-weight: 800;
-        font-size: 2.25rem;
-        line-height: 60px;
+			.text_gradient {
+				background-image: linear-gradient(
+					to right,
+					$purple-500,
+					$purple-600
+				);
+				background-clip: text;
+				color: transparent;
+			}
 
-        @media (min-width: 640px) {
-          font-size: 3rem;
-        }
+			.animated_text {
+				@include h3;
+			}
+		}
 
-        @media (min-width: 1024px) {
-          font-size: 3.75rem;
-        }
+		p {
+			color: #adb7be;
+			font-size: 1rem;
+			margin-bottom: 1.5rem;
 
-        .text_gradient {
-          background-image: linear-gradient(to right, $purple-500, $purple-600);
-          background-clip: text;
-          color: transparent;
-        }
-      }
+			@media (min-width: 640px) {
+				font-size: 1.125rem;
+			}
 
-      p {
-        color: #ADB7BE;
-        font-size: 1rem;
-        margin-bottom: 1.5rem;
+			@media (min-width: 1024px) {
+				font-size: 1.25rem;
+			}
+		}
 
-        @media (min-width: 640px) {
-          font-size: 1.125rem;
-        }
+		.button_group {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
 
-        @media (min-width: 1024px) {
-          font-size: 1.25rem;
-        }
-      }
+			@media (min-width: 640px) {
+				flex-direction: row;
+			}
 
-      .button_group {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
+			.connect_button {
+				padding: 0.75rem 1.5rem;
+				border-radius: 9999px;
+				width: 100%;
+				background-image: linear-gradient(
+					to bottom right,
+					$blue-500,
+					$purple-500,
+					$purple-600
+				);
+				color: white;
+				transition: background-color 0.3s;
 
-        @media (min-width: 640px) {
-          flex-direction: row;
-        }
+				@media (min-width: 640px) {
+					width: auto;
+					margin-right: 1rem;
+				}
 
-        .connect_button {
-          padding: 0.75rem 1.5rem;
-          border-radius: 9999px;
-          width: 100%;
-          background-image: linear-gradient(to bottom right, $blue-500, $purple-500, $purple-600);
-          color: white;
-          transition: background-color 0.3s;
+				&:hover {
+					background-color: $slate-200;
+				}
+			}
 
-          @media (min-width: 640px) {
-            width: auto;
-            margin-right: 1rem;
-          }
+			.resume_button_outer {
+				padding: 0.25rem;
+				border-radius: 9999px;
+				background-image: linear-gradient(
+					to right,
+					$blue-500,
+					$purple-500,
+					$purple-600
+				);
+				color: white;
+				width: 100%;
+				transition: background-color 0.3s;
 
-          &:hover {
-            background-color: $slate-200;
-          }
-        }
+				&:hover {
+					background-color: $slate-800;
+				}
 
-        .resume_button_outer {
-          padding: 0.25rem;
-          border-radius: 9999px;
-          background-image: linear-gradient(to right, $blue-500, $purple-500, $purple-600);
-          color: white;
-          width: 100%;
-          transition: background-color 0.3s;
+				.resume_button_inner {
+					display: block;
+					background-color: #121212;
+					border-radius: 9999px;
+					padding: 0.5rem 1.25rem;
 
-          @media (min-width: 640px) {
-            width: auto;
-            margin-top: 0.75rem;
-          }
+					&:hover {
+						background-color: $slate-800;
+					}
+				}
+			}
+		}
+	}
 
-          &:hover {
-            background-color: $slate-800;
-          }
-
-          .resume_button_inner {
-            display: block;
-            background-color: #121212;
-            border-radius: 9999px;
-            padding: 0.5rem 1.25rem;
-
-            &:hover {
-              background-color: $slate-800;
-            }
-          }
-        }
-      }
-    }
-
-    .hero_image {
-      grid-column: span 5;
-      place-self: center;
-      transform: translateX(0);
-      opacity: 0;
-      animation: fade-in-right 0.6s forwards;
-
-      .image_wrapper {
-        margin-top: 2.25rem;
-        width: 70vw;
-        max-width: 350px;
-        height: 340px;
-        position: relative;
-
-        @media (min-width: 640px) {
-          width: 400px;
-          max-width: 400px;
-        }
-
-        @media (min-width: 768px) {
-          width: 350px;
-          max-width: 450px;
-        }
-
-        @media (min-width: 1024px) {
-          width: 400px;
-          height: 400px;
-        }
-
-        .profile_image {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          border-top-left-radius: 20%;
-          border-bottom-right-radius: 20%;
-        }
-      }
-    }
-  }
+	.hero_image {
+		opacity: 0;
+    position: relative;
+    transform: translateX(50px);
+		animation: fade-in-right 1.6s forwards;
+		height: 500px;
+		width: 500px;
+		.profile_image {
+			position: absolute;
+			border: 1px double $purple-500;
+			border-top-left-radius: 20%;
+			border-bottom-right-radius: 20%;
+		}
+	}
 }
 
 // Animations
 @keyframes scale-up {
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
 }
 
 @keyframes fade-in-right {

@@ -1,0 +1,58 @@
+@mixin sm {
+	@media (min-width: 40rem) {
+		@content;
+	}
+}
+@mixin md {
+	@media (min-width: 48rem) {
+		@content;
+	}
+}
+@mixin lg {
+	@media (min-width: 64rem) {
+		@content;
+	}
+}
+@mixin xl {
+	@media (min-width: 80rem) {
+		@content;
+	}
+}
+@mixin xxl {
+	@media (min-width: 96rem) {
+		@content;
+	}
+}
+
+@mixin max-width-responsive {
+	margin-left: auto;
+	margin-right: auto;
+	// Mobile first
+	max-width: 100%;
+
+	// sm: 40rem–47.999rem
+	@include sm {
+		max-width: 40rem;
+	}
+
+	// md: 48rem–63.999rem
+	@include md {
+		max-width: 48rem;
+	}
+
+	// lg: 64rem–79.999rem
+	@include lg {
+		max-width: 64rem;
+	}
+
+	// xl: 80rem–95.999rem
+	@include xl {
+		max-width: 80rem;
+	}
+
+	// 2xl: 96rem+
+	@include xxl {
+		max-width: 96rem;
+	}
+}
+

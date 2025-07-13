@@ -21,6 +21,7 @@ export default function Type_Animation () {
         wrapper="span"
         speed={50}
         repeat={Infinity}
+        className='animated_text'
     />);
 }
 

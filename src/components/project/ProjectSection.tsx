@@ -44,7 +44,7 @@ const ProjectSection = () => {
                 <ProjectCard  project={project} />
             </motion.div>
             :
-            <ProjectCard  project={project} />
+            <ProjectCard  project={project} key={index+project.title} />
         )
             )}
         </div>

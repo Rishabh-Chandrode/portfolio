@@ -1,4 +1,4 @@
-import { Education as Education_T } from "@Types/resume/education";
+import { Education as Education_T } from '@Types/resume/education';
 
 const Education = ({Education}: {Education: Education_T}) => {
 	return (

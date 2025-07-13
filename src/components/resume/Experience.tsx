@@ -1,4 +1,4 @@
-import { Experience as Experience_T } from "@Types/resume/experience";
+import { Experience as Experience_T } from '@Types/resume/experience';
 
 const Experience = ({Experience} : {Experience: Experience_T}) => {
 	return (
@@ -10,8 +10,8 @@ const Experience = ({Experience} : {Experience: Experience_T}) => {
 			</p>
 			<ul className="list-disc pl-2 pt-2 text-justify ">
                 {
-                    Experience.points.map( (point: string) => 
-                        <li className="leading-6">{point}</li>
+                    Experience.points.map( (point: string, index: number) => 
+                        <li key={`experience_${index}`} className="leading-6">{point}</li>
                     )
                 }
 			</ul>

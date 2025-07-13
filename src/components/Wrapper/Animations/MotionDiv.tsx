@@ -1,5 +1,7 @@
-import { motion, MotionProps } from "framer-motion";
-import { ReactNode, HTMLAttributes } from "react";
+'use client';
+import { MotionProps, motion } from 'framer-motion';
+import { ReactNode, HTMLAttributes } from 'react';
+
 
 type MotionDivProps = {
 	children: ReactNode;
