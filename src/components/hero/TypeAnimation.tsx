@@ -15,7 +15,7 @@ export default function Type_Animation() {
 				1000,
 				"Gamer",
 				1000,
-				"Motoring Aficionado",
+				"Car Enthusiast",
 				1000,
 			]}
 			wrapper="span"
