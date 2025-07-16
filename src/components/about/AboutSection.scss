@@ -1,6 +1,6 @@
 @use "@Styles/shared/colours" as *;
-@use "../../styles/shared/responsive" as *;
-@use "../../styles/shared/typography" as *;
+@use "@Styles/shared/responsive" as *;
+@use "@Styles/shared/typography" as *;
 
 #about_section {
 	@include max-width-responsive;
@@ -17,9 +17,9 @@
 	.image_wrapper {
 		flex: 1;
 		position: relative;
-		width: 100%;
 		max-width: 500px;
 		aspect-ratio: 1 / 1;
+		display: none;
 
 		img {
 			width: 100%;
