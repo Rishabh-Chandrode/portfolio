@@ -16,16 +16,11 @@ const HeroSection = () => {
         <div className="hero_text">
           <h1>
             <span className="text_gradient">Hello, I&apos;m</span>
-            <br />
             <span>Rishabh Chandrode</span>
-            <br />
-            <div className="animated_text">
+            <span className="animated_text">
               <Type_Animation />
-            </div>
+            </span>
           </h1>
-          <p>
-            {/* You can add your description here */}
-          </p>
           <div className="button_group">
             <Link href={'#EmailSection'} passHref>
               <button className="connect_button">Connect</button>
@@ -46,7 +41,14 @@ const HeroSection = () => {
               className="profile_image"
               priority
               placeholder="blur"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              sizes="
+                (min-width: 96rem) 400px,
+                (min-width: 80rem) 400px,
+                (min-width: 64rem) 325px,
+                (min-width: 48rem) 275px,
+                (min-width: 40rem) 400px,
+                100vw
+              "
             />
         </div>
     </section>

@@ -14,9 +14,9 @@ import '@Styles/app/home.scss';
 export default function Home() {
   return (
     <main className="content" id='content'>
-        <Navbar/>
+        {/* <Navbar/> */}
         <Chatbot/> 
-      <div className='container'>
+      <div className=''>
       <HeroSection />
       <AboutSection/>
       <Skills />

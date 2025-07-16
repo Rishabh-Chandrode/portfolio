@@ -1,23 +1,34 @@
+
+//default size for <640px
+// sm: >=640px
 @mixin sm {
 	@media (min-width: 40rem) {
 		@content;
 	}
 }
+
+// md: >=768
 @mixin md {
 	@media (min-width: 48rem) {
 		@content;
 	}
 }
+
+// lg: >=1024
 @mixin lg {
 	@media (min-width: 64rem) {
 		@content;
 	}
 }
+
+// xl: >=1280
 @mixin xl {
 	@media (min-width: 80rem) {
 		@content;
 	}
 }
+
+// xxl: >=1536px
 @mixin xxl {
 	@media (min-width: 96rem) {
 		@content;
@@ -27,32 +38,26 @@
 @mixin max-width-responsive {
 	margin-left: auto;
 	margin-right: auto;
-	// Mobile first
-	max-width: 100%;
+	max-width: 20rem;
 
-	// sm: 40rem–47.999rem
+	// sm: 40rem
 	@include sm {
+		max-width: 30rem;	
+	}
+	// md: 48
+	@include md {
 		max-width: 40rem;
 	}
-
-	// md: 48rem–63.999rem
-	@include md {
+	// lg: 64
+	@include lg {
 		max-width: 48rem;
 	}
-
-	// lg: 64rem–79.999rem
-	@include lg {
+	// xl: 80
+	@include xl {
 		max-width: 64rem;
 	}
-
-	// xl: 80rem–95.999rem
-	@include xl {
+	// xl: 96
+	@include xxl {
 		max-width: 80rem;
 	}
-
-	// 2xl: 96rem+
-	@include xxl {
-		max-width: 96rem;
-	}
 }
-

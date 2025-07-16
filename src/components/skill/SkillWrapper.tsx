@@ -1,6 +1,3 @@
-
-
-
 import Skill from '@/src/components/skill/Skill';
 import { Skill as Skill_T, SkillCategory } from '@Types/skills/skills';
 
