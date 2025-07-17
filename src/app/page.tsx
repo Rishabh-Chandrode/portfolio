@@ -2,7 +2,7 @@ import HeroSection from '@Components/hero/HeroSection';
 import Navbar from '@Components/navbar/Navbar';
 import Chatbot from '@Components/chatbot/Chatbot';
 import AboutSection from '@Components/about/AboutSection';
-import Skills from '@Components/skill/Skills';
+import Skills from '@/src/components/skill/Skills_Section';
 import ProjectSection from '@Components/project/ProjectSection';
 import EmailSection from '@Components/contact/EmailSection';
 import Footer from '@Components/footer/Footer';

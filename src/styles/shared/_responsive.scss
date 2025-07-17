@@ -36,13 +36,15 @@
 }
 
 @mixin max-width-responsive {
-	margin-left: auto;
-	margin-right: auto;
-	min-width: 20rem;
+	// min-width: 20rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
 
 	// sm: 40rem
 	@include sm {
-		max-width: 30rem;	
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
 	// md: 48
 	@include md {

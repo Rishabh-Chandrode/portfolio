@@ -1,11 +1,11 @@
-import { Education as Education_T } from '@Types/resume/education';
+import { EDUCATION_T } from '@Types/resume/education';
 
-const Education = ({Education}: {Education: Education_T}) => {
+const Education = ({Education}: {Education: EDUCATION_T}) => {
 	return (
 		<>
-			<h4>{Education.degree}</h4>
-			<h5>{Education.duration}</h5>
-			<p>
+			<h4 className='degree'>{Education.degree}</h4>
+			<h5 className='duration'>{Education.duration}</h5>
+			<p className='institution'>
 				<em>{Education.institution}</em>
 			</p>
 		</>

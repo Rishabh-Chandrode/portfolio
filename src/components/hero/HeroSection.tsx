@@ -36,11 +36,12 @@ const HeroSection = () => {
         <div className="hero_image">
             <Image
               fill
-              src={profileImage}
+              // src={profileImage}
+              src='https://placehold.co/400x400'
               alt="Rishabh Chandrode Profile Image"
               className="profile_image"
               priority
-              placeholder="blur"
+              // placeholder="blur"
               sizes="
                 (min-width: 96rem) 400px,
                 (min-width: 80rem) 400px,

@@ -2,17 +2,21 @@
 import {motion} from 'framer-motion';
 import Image from 'next/image';
 
-import { Skill as Skill_T } from '@Types/skills/skills';
+import { SKILL_T } from '@Types/skills/skills';
 
-import '@Components/skill/Skills.scss';
+const skillVariants = {
+	hidden: { x: 50, opacity: 0 },
+	show: { x: 0, opacity: 1 },
+	exit: { x: -50, opacity: 0 },
+  };
 
-const Skill = ({ skill, index }: { skill: Skill_T, index: number }) => {
+const Skill = ({ skill }: { skill: SKILL_T}) => {
 	return (
 		<motion.div
-			initial={{ x: 50, opacity: 0 }}
-			animate={{ x: 0, opacity: 1 }}
-			exit={{x: -50, opacity: 0}}
-			transition={{ duration: 0.5, delay: index * 0.05 }}
+			variants={skillVariants}
+			initial="hidden"
+			animate="show"
+			exit="exit"
 			className="skill"
 		>
             <div className="skill-icon">
@@ -24,7 +28,7 @@ const Skill = ({ skill, index }: { skill: Skill_T, index: number }) => {
 					width={32}
                 />
             </div>
-            <h3>{skill.name}</h3>
+            <p>{skill.name}</p>
 		</motion.div>
 	);
 };

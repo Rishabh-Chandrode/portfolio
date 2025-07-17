@@ -1,8 +1,8 @@
-import { ChatMessage } from '@Types/shared/types';
+import { CHAT_MESSAGE_T } from '@Types/shared/types';
 
-export type { ChatMessage } from '@Types/shared/types';
-export type RequestBody = {
+export type { CHAT_MESSAGE_T } from '@Types/shared/types';
+export type REQUEST_BODY_T = {
     email: string;
     subject: string;
-    message: string | ChatMessage[];
+    message: string | CHAT_MESSAGE_T[];
 };

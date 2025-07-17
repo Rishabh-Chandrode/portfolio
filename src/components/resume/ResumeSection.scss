@@ -1,64 +1,86 @@
+@use "@Styles/shared/colours" as *;
+@use "@Styles/shared/responsive" as *;
+@use "@Styles/shared/typography" as *;
 
 #resume {
-  overflow: hidden;
-}
+	@include max-width-responsive;
+	overflow: hidden;
 
-.resume .resume-title {
-    font-size: 26px;
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    color: #fff;
-  }
-  
-  .resume .resume-item {
-    padding: 0 0 20px 20px;
-    margin-top: -2px;
-    border-left: 2px solid rgba(255, 255, 255, 0.2);
-    position: relative;
-    margin-left: 0.5rem;
-  }
-  
-  .resume .resume-item h4 {
-    line-height: 18px;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-family: "Poppins", sans-serif;
-    /* color: #18d26e; */
-    color: #18d26e;
-    margin-bottom: 10px;
-  }
-  
-  .resume .resume-item h5 {
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 5px 15px;
-    display: inline-block;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .resume .resume-item ul {
-    padding-left: 20px;
-  }
-  
-  .resume .resume-item ul li {
-    padding-bottom: 10px;
-  }
-  
-  .resume .resume-item:last-child {
-    padding-bottom: 0;
-  }
-  
-  .resume .resume-item::before {
-    content: "";
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    border-radius: 50px;
-    left: -9px;
-    top: 0;
-    background: #18d26e;
-    border: 2px solid #18d26e;
-  }
+	.title {
+		@include h3;
+	}
+
+	.experience,
+	.education {
+		.title {
+			@include h4;
+      margin: 1rem 0;
+		}
+		.item {
+			padding: 0 0 1rem 0.75rem;
+			margin-top: -2px;
+			position: relative;
+			margin-left: 0.5rem;
+
+      @include md {
+        padding-left: 1rem
+      }
+
+			.profile, .degree {
+        @include h5;
+				color: #18d26e;
+				margin-bottom: 10px;
+			}
+
+			.duration {
+        @include subtitle;
+				background: rgba(255, 255, 255, 0.15);
+				padding: 0.125rem 0.5rem;
+				display: inline-block;
+				margin-bottom: 10px;
+			}
+
+			.list {
+        list-style: disc;
+        padding-left: 1rem;
+        padding-top: 1rem;
+        text-align: justify;
+
+        @include md {
+          margin-left: 0.5rem;
+        }
+
+				.point {
+          @include body-text;
+					padding-bottom: 10px;
+				}
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 16px;
+				height: 16px;
+				border-radius: 50px;
+				left: -8px;
+				top: 5px;
+				background: #18d26e;
+				border: 2px solid #18d26e;
+			}
+      &::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        background: rgba(255, 255, 255, 0.2);
+        left: -1px;
+        top: 18px;
+        bottom: 0;
+        z-index: 0;
+      }
+		}
+	}
+}
