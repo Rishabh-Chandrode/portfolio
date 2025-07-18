@@ -1,43 +1,61 @@
-import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid';
-import Link from 'next/link';
-import Image from 'next/image';
-import { PROJECT_T } from '@Types/project/project';
+import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
+import Image from "next/image";
+import { PROJECT_T } from "@Types/project/project";
 
-const ProjectCard = ({project} : {project: PROJECT_T}) => {
-    return (
-        <div>
-           <div className="relative h-52 md:h-72 rounded-t-xl overflow-hidden group">
-            <Image
-              src={project.imageUrl}
-              alt={project.title || 'Project Image'}
-              fill
-              style={{ objectFit: 'cover', objectPosition: 'center' }}
-              className="rounded-t-xl"
-              placeholder="blur"
-              priority={false}
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-25 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            <div className="overlay  items-center justify-center absolute top-0 left-0 w-full h-full bg-[#181818] bg-opacity-0  group-hover:flex group-hover:bg-opacity-80 transition-all duration-500">
-              <Link
-                href={project.giturl}
-                className="h-14 w-14 mr-2 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link  hidden group-hover:flex  "
-              >
-                <CodeBracketIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white   group-hover:flex  transition-all  duration-500 " />
-              </Link>
-              <Link
-                href={project.liveurl}
-                className="h-14 w-14 border-2 relative rounded-full border-[#ADB7BE] hover:border-white group/link   hidden group-hover:flex"
-              >
-                <EyeIcon className="h-10 w-10 text-[#ADB7BE] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  cursor-pointer group-hover/link:text-white   group-hover:flex transition-all duration-500 " />
-              </Link>
-            </div>
-          </div>
-          <div className="text-white rounded-b-xl mt-3 bg-[#181818]py-6 px-4">
-            <h5 className="text-xl font-semibold mb-2">{project.title}</h5>
-            <p className="text-[#ADB7BE]">{project.description}</p>
-          </div>
-        </div>
-      );
+import { motion } from "framer-motion";
+
+const cardVariants = {
+	initial: { y: 50, opacity: 0 },
+	animate: { y: 0, opacity: 1 },
+};
+
+const ProjectCard = ({
+	index,
+	project,
+	isInView,
+}: {
+	project: PROJECT_T;
+	index: number;
+	isInView: boolean;
+}) => {
+	return (
+		<motion.div
+			variants={cardVariants}
+			initial="initial"
+			animate={isInView ? "animate" : "initial"}
+			transition={{ duration: 0.5, delay: index * 0.2 }}
+			key={index + project.title}
+			className="project_card"
+		>
+			<div className="image_container">
+				<Image
+					src={project.imageUrl}
+					alt={project.title || "Project Image"}
+					fill
+					className="project_image"
+					placeholder="blur"
+					priority={false}
+				/>
+			</div>
+			<div className="content">
+				<div className="info">
+					<h5 className="project_title">{project.title}</h5>
+					<p className="project_description">{project.description}</p>
+				</div>
+				<div className="links">
+					<Link href={project.giturl} className="icon_button">
+						<div className="icon_text">source</div>
+						<CodeBracketIcon className="icon" />
+					</Link>
+					<Link href={project.liveurl} className="icon_button">
+						<div className="icon_text">Live</div>
+						<EyeIcon className="icon" />
+					</Link>
+				</div>
+			</div>
+		</motion.div>
+	);
 };
 
 export default ProjectCard;

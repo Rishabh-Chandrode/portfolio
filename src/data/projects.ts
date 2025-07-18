@@ -31,8 +31,8 @@ const projects = [
         tag: ['All']
     },
     {
-        title: 'Video-Subtitle-Adder',
-        description: 'Adds subtitle to video files',
+        title: 'Subtitle Generater',
+        description: 'Generates subtitle file',
         imageUrl: videoAppImage,
         giturl: 'https://github.com/Rishabh-Chandrode/videoapp',
         liveurl: 'https://video-subtitle-adder.onrender.com/',
