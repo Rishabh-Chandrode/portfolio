@@ -4,6 +4,7 @@
 
 #project_section {
 	@include max-width-responsive;
+    margin-top: 1rem;
 
 	.title {
 		@include h4;

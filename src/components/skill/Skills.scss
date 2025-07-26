@@ -7,6 +7,12 @@
     margin-top: 2rem;
     overflow: hidden;
     min-height: 37rem;
+    @include sm {
+        min-height: 24rem;
+    }
+    @include lg {
+        min-height: 18rem;
+    }
     .title {
         @include h3;
     }

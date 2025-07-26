@@ -1,11 +1,11 @@
 
-"use client";
-import { motion } from "framer-motion";
-import { useRef, useEffect, useState } from "react";
+'use client';
+import { motion } from 'framer-motion';
+import { useRef, useEffect, useState } from 'react';
 
-import { skill_categories } from "@Data/skills";
+import { skill_categories } from '@Data/skills';
 
-import { SKILL_CATEGORY_T } from "@Types/skills/skills";
+import { SKILL_CATEGORY_T } from '@Types/skills/skills';
 
 const Skill_Categories = ({current_category, changeHandler}: {current_category: SKILL_CATEGORY_T, changeHandler: (skill_category: SKILL_CATEGORY_T) => void }) => {
     const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ const Skill_Categories = ({current_category, changeHandler}: {current_category: 
 		if (!container) return;
 
 		const active = container.querySelector(
-			".category.selected"
+			'.category.selected'
 		) as HTMLElement | null;
 		if (active) {
 			const { offsetLeft, offsetTop, offsetWidth, offsetHeight } = active;
@@ -40,7 +40,7 @@ const Skill_Categories = ({current_category, changeHandler}: {current_category: 
 						key={skill_category}
 						onClick={() => changeHandler(skill_category)}
 						className={`category ${
-							current_category === skill_category ? "selected" : ""
+							current_category === skill_category ? 'selected' : ''
 						}`}
 					>
 						{skill_category.toUpperCase()}
@@ -50,7 +50,7 @@ const Skill_Categories = ({current_category, changeHandler}: {current_category: 
 				<motion.div
 					className="category-underline"
 					layout
-					transition={{ type: "spring", stiffness: 300, damping: 20 }}
+					transition={{ type: 'spring', stiffness: 300, damping: 20 }}
 					animate={{
 						left: underlineProps.left,
 						top: underlineProps.top,
@@ -60,6 +60,6 @@ const Skill_Categories = ({current_category, changeHandler}: {current_category: 
 				/>
 			</div>
     );
-}
+};
 
 export default Skill_Categories;

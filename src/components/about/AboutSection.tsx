@@ -8,6 +8,7 @@ import '@Components/about/AboutSection.scss';
 const AboutSection = () => {
 	return (
 		<section id='about_section'>
+			<h3 className='title' >About Me</h3>
 			<div className='image_wrapper' >
 				<Image src={AboutImage}
 					fill
@@ -18,7 +19,7 @@ const AboutSection = () => {
 			</div>
 
 			<div className='content' >
-				<h3 className='title' >About Me</h3>
+				
 				<p className='text' >
 					{
 						about_D.map( (about_point:string, index:number) => (

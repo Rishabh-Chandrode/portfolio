@@ -1,7 +1,7 @@
-import { Experience } from '@Types/resume/experience';
-import { Education } from '@Types/resume/education';
+import { EXPERIENCE_T } from '@Types/resume/experience';
+import { EDUCATION_T } from '@Types/resume/education';
 
-export const Experiences: Experience[] = [
+export const Experiences: EXPERIENCE_T[] = [
 	{
 		profile: 'Software Development Engineer',
 		duration: '09/2024 - present',
@@ -24,7 +24,7 @@ export const Experiences: Experience[] = [
 	},
 ];
 
-export const Educations: Education[] = [
+export const Educations: EDUCATION_T[] = [
 	{
 		degree: 'B.Tech - Computer Science and Engineering',
 		duration: '2020 - 2024',

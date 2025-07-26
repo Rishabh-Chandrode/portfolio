@@ -8,7 +8,7 @@ import Loader from '@Components/shared/loader/Loader';
 import Image from 'next/image';
 import chatbot_image from '@Images/logos/chatbot_logo.png';
 import send_icon from '@Images/logos/send.png';
-import { ChatMessage } from '@/src/types/shared/types';
+import { CHAT_MESSAGE_T } from '@/src/types/shared/types';
 
 const cardVariants = {
   open:{ scale:1, x:0 , y:0,
@@ -24,7 +24,7 @@ const Chatbot = () => {
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const lastChatRef = useRef<HTMLDivElement | null>(null);
-  const [chats, setChats] = useState<ChatMessage[]>([
+  const [chats, setChats] = useState<CHAT_MESSAGE_T[]>([
     {
       role: 'assistant',
       content: 'hello, welcome to my website'
@@ -32,7 +32,7 @@ const Chatbot = () => {
   ]);
 
 
-  async function askgpt(newmessages: ChatMessage[]) {
+  async function askgpt(newmessages: CHAT_MESSAGE_T[]) {
     const response = await fetch('/api/v2/chatbot', {
       method: 'POST',
       body: JSON.stringify({ messages: newmessages }),
@@ -65,7 +65,7 @@ const Chatbot = () => {
   }, [chats]);
 
 
-  const sendchats = async (currentChats: ChatMessage[])=> {
+  const sendchats = async (currentChats: CHAT_MESSAGE_T[])=> {
     const data = {
         email: 'form chatbot',
         subject: 'User chat history',

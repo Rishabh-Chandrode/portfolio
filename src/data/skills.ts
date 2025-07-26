@@ -1,5 +1,5 @@
 // Types
-import { Skill, SkillCategory } from '@Types/skills/skills';
+import { SKILL_T, SKILL_CATEGORY_T } from '@Types/skills/skills';
 
 import cpp_icon from '@Images/logos/skills/cpp.png';
 import c_icon from '@Images/logos/skills/c.png';
@@ -18,9 +18,9 @@ import git_icon from '@Images/logos/skills/git.png';
 import dsa_icon from '@Images/logos/skills/data-structure.png';
 import algorithm_icon from '@Images/logos/skills/algorithm.png';
 
-const skill_categories: SkillCategory[] = ['all', 'programming', 'web', 'db', 'os', 'misc']
+const skill_categories: SKILL_CATEGORY_T[] = ['all', 'programming', 'web', 'db', 'os', 'misc'];
 
-const skills: Skill[] = [
+const skills: SKILL_T[] = [
   {
     name: 'C++',
     icon: cpp_icon,

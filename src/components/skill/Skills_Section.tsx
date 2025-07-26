@@ -1,15 +1,15 @@
-"use client";
-import { useState } from "react";
+'use client';
+import { useState } from 'react';
 
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from 'framer-motion';
 
-import { skills } from "@Data/skills";
+import { skills } from '@Data/skills';
 
-import Skill from "@Components/skill/Skill";
-import {  SKILL_T, SKILL_CATEGORY_T } from "@Types/skills/skills";
-import Skill_Categories from "@Components/skill/Skill_Categories";
+import Skill from '@Components/skill/Skill';
+import {  SKILL_T, SKILL_CATEGORY_T } from '@Types/skills/skills';
+import Skill_Categories from '@Components/skill/Skill_Categories';
 
-import "@Components/skill/Skills.scss";
+import '@Components/skill/Skills.scss';
 
 const Skills = () => {
 	const [currentCategory, setCurrentCategory] = useState<SKILL_CATEGORY_T>('all');
@@ -17,7 +17,7 @@ const Skills = () => {
 		return skill.tag.includes(currentCategory);
 	});
 
-	function handleSkillChange(skill_category: SKILL_CATEGORY_T) {
+	function handleSkillChange(skill_category: SKILL_CATEGORY_T): void {
 		setCurrentCategory(skill_category);
 	}
 

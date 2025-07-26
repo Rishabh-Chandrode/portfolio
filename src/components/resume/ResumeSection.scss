@@ -5,6 +5,7 @@
 #resume {
 	@include max-width-responsive;
 	overflow: hidden;
+	margin-top: 1rem;
 
 	.title {
 		@include h3;

@@ -6,8 +6,7 @@ import { SKILL_T } from '@Types/skills/skills';
 
 const skillVariants = {
 	hidden: { x: 50, opacity: 0 },
-	show: { x: 0, opacity: 1 },
-	exit: { x: -50, opacity: 0 },
+	show: { x: 0, opacity: 1 }
   };
 
 const Skill = ({ skill }: { skill: SKILL_T}) => {
@@ -16,7 +15,6 @@ const Skill = ({ skill }: { skill: SKILL_T}) => {
 			variants={skillVariants}
 			initial="hidden"
 			animate="show"
-			exit="exit"
 			className="skill"
 		>
             <div className="skill-icon">

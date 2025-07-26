@@ -1,16 +1,11 @@
-"use client";
-import React, { useState, useRef } from "react";
-import ProjectCard from "./ProjectCard";
-import { motion, useInView } from "framer-motion";
+'use client';
+import React, { useRef } from 'react';
+import ProjectCard from './ProjectCard';
+import { useInView } from 'framer-motion';
 
-import projects from "@Data/projects";
+import projects from '@Data/projects';
 
-import "@Components/project/Project_Section.scss";
-
-const cardVariants = {
-	initial: { y: 50, opacity: 0 },
-	animate: { y: 0, opacity: 1 },
-};
+import '@Components/project/Project_Section.scss';
 
 const ProjectSection = () => {
 	const ref = useRef(null);

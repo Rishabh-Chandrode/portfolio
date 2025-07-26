@@ -11,7 +11,19 @@
 	margin-top: 2rem;
 	border: 1px solid $slate-800;
 	border-radius: 10px;
-	overflow: hidden;
+	position: relative;
+	.title {
+		@include h3;
+		position: absolute;
+		top: -1.75rem;
+		left: 1rem;
+		padding: 0.5rem;
+		background-color: rgb(var(--background));
+
+		@include md {
+			top: -2.25rem;
+		}
+	}
 
 
 	.image_wrapper {
@@ -28,11 +40,11 @@
 
 	.content {
 		flex: 1;
-		padding: 1rem;
+		padding: 1.5rem 1rem 1rem;
 		animation: scale-fade-in 0.8s ease-in-out forwards;
 
-		.title {
-			@include h3;
+		@include lg {
+			padding-top: 2rem;
 		}
 
 		.text {

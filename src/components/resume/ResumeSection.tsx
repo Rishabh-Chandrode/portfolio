@@ -1,19 +1,19 @@
-"use client";
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+'use client';
+import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 
-import { EDUCATION_T } from "@Types/resume/education";
-import { EXPERIENCE_T } from "@Types/resume/experience";
+import { EDUCATION_T } from '@Types/resume/education';
+import { EXPERIENCE_T } from '@Types/resume/experience';
 
 import {
 	Experiences as Experiences_D,
 	Educations as Educations_D,
-} from "@Data/resume";
+} from '@Data/resume';
 
-import Education from "@Components/resume/Education";
-import Experience from "@Components/resume/Experience";
+import Education from '@Components/resume/Education';
+import Experience from '@Components/resume/Experience';
 
-import "@Components/resume/ResumeSection.scss";
+import '@Components/resume/ResumeSection.scss';
 
 const cardVariants = {
 	initial: { x: 50, opacity: 0 },
@@ -37,7 +37,7 @@ const ResumeSection = () => {
 						<motion.div
 							variants={cardVariants}
 							initial="initial"
-							animate={isexpInView ? "animate" : "initial"}
+							animate={isexpInView ? 'animate' : 'initial'}
 							transition={{ duration: 0.5 }}
 							className="item"
 							key={`experience_${index}`}
@@ -56,7 +56,7 @@ const ResumeSection = () => {
 					<motion.div
 						variants={cardVariants}
 						initial="false"
-						animate={iseduInView ? "animate" : "initial"}
+						animate={iseduInView ? 'animate' : 'initial'}
 						transition={{ duration: 0.5 }}
 						className="item"
 						key={`education_${index}`}

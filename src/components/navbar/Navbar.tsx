@@ -1,12 +1,11 @@
-"use client";
-import Link from "next/link";
-import React, { useState } from "react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-import MenuOverlay from "./MenuOverlay";
-import NavLink from "@/src/components/navbar/NavLink";
-import { navlinks } from "@Data/navbar";
+'use client';
+import React, { useState } from 'react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import MenuOverlay from './MenuOverlay';
+import NavLink from '@/src/components/navbar/NavLink';
+import { navlinks } from '@Data/navbar';
 
-import "@Components/navbar/navbar.scss";
+import '@Components/navbar/navbar.scss';
 
 const Navbar = () => {
 	const [navbarOpen, setNavbarOpen] = useState(false);

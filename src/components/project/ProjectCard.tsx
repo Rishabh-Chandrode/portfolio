@@ -1,9 +1,9 @@
-import { CodeBracketIcon, EyeIcon } from "@heroicons/react/24/solid";
-import Link from "next/link";
-import Image from "next/image";
-import { PROJECT_T } from "@Types/project/project";
+import { CodeBracketIcon, EyeIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
+import Image from 'next/image';
+import { PROJECT_T } from '@Types/project/project';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 const cardVariants = {
 	initial: { y: 50, opacity: 0 },
@@ -23,7 +23,7 @@ const ProjectCard = ({
 		<motion.div
 			variants={cardVariants}
 			initial="initial"
-			animate={isInView ? "animate" : "initial"}
+			animate={isInView ? 'animate' : 'initial'}
 			transition={{ duration: 0.5, delay: index * 0.2 }}
 			key={index + project.title}
 			className="project_card"
@@ -31,7 +31,7 @@ const ProjectCard = ({
 			<div className="image_container">
 				<Image
 					src={project.imageUrl}
-					alt={project.title || "Project Image"}
+					alt={project.title || 'Project Image'}
 					fill
 					className="project_image"
 					placeholder="blur"

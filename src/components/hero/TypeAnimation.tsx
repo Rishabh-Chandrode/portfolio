@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import dynamic from "next/dynamic";
+import dynamic from 'next/dynamic';
 
 const TypeAnimation = dynamic(() => import('react-type-animation').then(mod => mod.TypeAnimation), {
     ssr: false,
@@ -11,11 +11,11 @@ export default function Type_Animation() {
 	return (
 		<TypeAnimation
 			sequence={[
-				"Software Engineer",
+				'Software Engineer',
 				1000,
-				"Gamer",
+				'Gamer',
 				1000,
-				"Car Enthusiast",
+				'Car Enthusiast',
 				1000,
 			]}
 			wrapper="span"
