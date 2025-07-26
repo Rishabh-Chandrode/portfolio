@@ -1,0 +1,65 @@
+
+//default size for <640px
+// sm: >=640px
+@mixin sm {
+	@media (min-width: 40rem) {
+		@content;
+	}
+}
+
+// md: >=768
+@mixin md {
+	@media (min-width: 48rem) {
+		@content;
+	}
+}
+
+// lg: >=1024
+@mixin lg {
+	@media (min-width: 64rem) {
+		@content;
+	}
+}
+
+// xl: >=1280
+@mixin xl {
+	@media (min-width: 80rem) {
+		@content;
+	}
+}
+
+// xxl: >=1536px
+@mixin xxl {
+	@media (min-width: 96rem) {
+		@content;
+	}
+}
+
+@mixin max-width-responsive {
+	// min-width: 20rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+	// sm: 40rem
+	@include sm {
+		max-width: 40rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	// md: 48
+	@include md {
+		max-width: 40rem;
+	}
+	// lg: 64
+	@include lg {
+		max-width: 48rem;
+	}
+	// xl: 80
+	@include xl {
+		max-width: 64rem;
+	}
+	// xl: 96
+	@include xxl {
+		max-width: 80rem;
+	}
+}

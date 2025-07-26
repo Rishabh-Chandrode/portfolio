@@ -1,0 +1,17 @@
+@use "@Styles/shared/colours" as *;
+@use "@Styles/shared/responsive" as *;
+@use "@Styles/shared/typography" as *;
+
+#email_section {
+    @include max-width-responsive;
+    display: grid;
+	gap: 1rem;
+	position: relative;
+	margin-block: 3rem;
+	padding-block: 6rem;
+
+	@include md {
+		grid-template-columns: repeat(2, 1fr);
+		margin-block: 3rem;
+	}
+}

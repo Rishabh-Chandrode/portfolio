@@ -1,0 +1,74 @@
+@use "@Styles/shared/colours" as *;
+@use "@Styles/shared/responsive" as *;
+@use "@Styles/shared/typography" as *;
+
+#about_section {
+	@include max-width-responsive;
+
+	display: flex;
+	justify-content: space-around;
+	gap: 1rem;
+	margin-top: 2rem;
+	border: 1px solid $slate-800;
+	border-radius: 10px;
+	position: relative;
+	.title {
+		@include h3;
+		position: absolute;
+		top: -1.75rem;
+		left: 1rem;
+		padding: 0.5rem;
+		background-color: rgb(var(--background));
+
+		@include md {
+			top: -2.25rem;
+		}
+	}
+
+
+	.image_wrapper {
+		flex: 1;
+		position: relative;
+		max-width: 500px;
+		aspect-ratio: 1 / 1;
+		display: none;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.content {
+		flex: 1;
+		padding: 1.5rem 1rem 1rem;
+		animation: scale-fade-in 0.8s ease-in-out forwards;
+
+		@include lg {
+			padding-top: 2rem;
+		}
+
+		.text {
+			@include body-text;
+			text-align: justify;
+		}
+	}
+}
+
+// Animations
+@keyframes fade-in-right {
+	to {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes scale-fade-in {
+	from {
+		transform: scale(0.95);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
