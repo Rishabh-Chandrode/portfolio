@@ -13,7 +13,7 @@ import '@Styles/app/home.scss';
 export default function Home() {
   return (
     <main className="content" id='content'>
-        <Chatbot/> 
+        {/* <Chatbot/>  */}
       <div className=''>
       <HeroSection />
       <AboutSection/>
