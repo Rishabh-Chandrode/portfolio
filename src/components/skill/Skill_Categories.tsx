@@ -39,7 +39,7 @@ const Skill_Categories = ({current_category, changeHandler}: {current_category: 
 					<div
 						key={skill_category}
 						onClick={() => changeHandler(skill_category)}
-						className={`category ${
+						className={`category cursor-pointer ${
 							current_category === skill_category ? 'selected' : ''
 						}`}
 					>

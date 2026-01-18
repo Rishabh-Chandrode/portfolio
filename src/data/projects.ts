@@ -4,8 +4,17 @@ import defaultImage from '@Images/projects/default.webp';
 import videoAppImage from '@Images/projects/videoapp.webp';
 import pspotImage from '@Images/projects/pspot.webp';
 import bizzWhizzImage from '@Images/projects/bizzwizz2.webp';
+import coEditor from '@Images/projects/co-editor.webp';
 
 const projects = [
+    {
+        title: 'Co-Editor',
+        description: 'Real time collabaration text editor',
+        imageUrl: coEditor,
+        giturl: 'https://github.com/Rishabh-Chandrode/collab-txt-editor',
+        liveurl: 'https://coeditor-jjt8.onrender.com/',
+        tag: ['All', 'Web']
+    },
     {
         title: 'Vchat',
         description: 'Social media web app',
