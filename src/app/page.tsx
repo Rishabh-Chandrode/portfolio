@@ -7,6 +7,7 @@ import Footer from '@Components/footer/Footer';
 import ResumeSection from '@/src/components/resume/ResumeSection';
 
 import '@Styles/app/home.scss';
+import Chatbot from '../components/chatbot/Chatbot';
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     <main className="content" id='content'>
       <div className=''>
       <HeroSection />
+      <Chatbot />
       <AboutSection/>
       <Skills />
       <ResumeSection/>
