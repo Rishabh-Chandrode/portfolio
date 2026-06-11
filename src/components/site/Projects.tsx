@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Project } from '@/lib/content';
 import Reveal from '@/components/site/Reveal';
+import TiltCard from '@/components/site/TiltCard';
 
 function ExternalLinkIcon() {
 	return (
@@ -57,30 +58,33 @@ export default function Projects({ projects }: { projects: Project[] }) {
 				<h2 className="section-heading">Projects</h2>
 			</Reveal>
 
-			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			<div className="group/grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{featured.map((project, index) => (
 					<Reveal key={project.title} delay={index * 75}>
-						<article className="group flex h-full flex-col overflow-hidden rounded-lg border border-line bg-panel transition-colors hover:border-accent/40">
-							{project.image && (
-								<div className="relative aspect-[16/9] overflow-hidden border-b border-line">
-									<Image
-										src={project.image}
-										alt={project.title}
-										fill
-										sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-										className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-									/>
+						<TiltCard className="h-full transition-opacity duration-300 group-hover/grid:opacity-50 hover:!opacity-100">
+							<article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-panel transition-colors hover:border-accent/40">
+								<div className="tilt-glare pointer-events-none absolute inset-0 z-10" aria-hidden="true" />
+								{project.image && (
+									<div className="relative aspect-[16/9] overflow-hidden border-b border-line">
+										<Image
+											src={project.image}
+											alt={project.title}
+											fill
+											sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+											className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+										/>
+									</div>
+								)}
+								<div className="flex flex-1 flex-col gap-3 p-5">
+									<div className="flex items-start justify-between gap-3">
+										<h3 className="font-semibold text-zinc-100">{project.title}</h3>
+										<ProjectLinks project={project} />
+									</div>
+									<p className="flex-1 text-sm leading-relaxed">{project.description}</p>
+									<TechList tech={project.tech} />
 								</div>
-							)}
-							<div className="flex flex-1 flex-col gap-3 p-5">
-								<div className="flex items-start justify-between gap-3">
-									<h3 className="font-semibold text-zinc-100">{project.title}</h3>
-									<ProjectLinks project={project} />
-								</div>
-								<p className="flex-1 text-sm leading-relaxed">{project.description}</p>
-								<TechList tech={project.tech} />
-							</div>
-						</article>
+							</article>
+						</TiltCard>
 					</Reveal>
 				))}
 			</div>

@@ -19,6 +19,57 @@ body {
 	@apply bg-accent/30 text-zinc-100;
 }
 
+/* Entrance animation for above-the-fold content; staggered via --enter-delay. */
+@keyframes enter {
+	from {
+		opacity: 0;
+		transform: translateY(18px);
+		filter: blur(5px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+		filter: none;
+	}
+}
+
+.animate-enter {
+	animation: enter 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+	animation-delay: var(--enter-delay, 0ms);
+}
+
+/* 3D tilt cards: transform is driven from JS, the glare follows --glare-x/y. */
+.tilt {
+	transform-style: preserve-3d;
+	transition: transform 0.18s ease-out;
+	will-change: transform;
+}
+
+.tilt-glare {
+	background: radial-gradient(
+		420px circle at var(--glare-x, 50%) var(--glare-y, 50%),
+		rgba(255, 255, 255, 0.07),
+		transparent 65%
+	);
+	opacity: 0;
+	transition: opacity 0.25s;
+}
+
+.tilt:hover .tilt-glare {
+	opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.animate-enter {
+		animation: none;
+	}
+
+	.tilt,
+	.tilt:hover {
+		transform: none !important;
+	}
+}
+
 @layer components {
 	.container-md {
 		@apply mx-auto w-full max-w-4xl px-6;

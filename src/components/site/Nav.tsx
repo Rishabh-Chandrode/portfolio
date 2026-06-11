@@ -14,12 +14,31 @@ const LINKS = [
 export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: string }) {
 	const [scrolled, setScrolled] = useState(false);
 	const [open, setOpen] = useState(false);
+	const [active, setActive] = useState('');
 
 	useEffect(() => {
 		const onScroll = () => setScrolled(window.scrollY > 8);
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => window.removeEventListener('scroll', onScroll);
+	}, []);
+
+	// Scrollspy: highlight the link of the section currently in the middle of
+	// the viewport.
+	useEffect(() => {
+		const sections = LINKS.map((link) => document.querySelector(link.href)).filter(
+			(section): section is Element => section !== null,
+		);
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+				}
+			},
+			{ rootMargin: '-40% 0px -55% 0px' },
+		);
+		sections.forEach((section) => observer.observe(section));
+		return () => observer.disconnect();
 	}, []);
 
 	return (
@@ -35,7 +54,13 @@ export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: stri
 
 				<div className="hidden items-center gap-7 md:flex">
 					{LINKS.map((link) => (
-						<a key={link.href} href={link.href} className="text-sm text-zinc-400 transition-colors hover:text-zinc-100">
+						<a
+							key={link.href}
+							href={link.href}
+							className={`relative text-sm transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-accent after:transition-transform after:duration-300 hover:text-zinc-100 hover:after:scale-x-100 ${
+								active === link.href ? 'text-zinc-100 after:scale-x-100' : 'text-zinc-400 after:scale-x-0'
+							}`}
+						>
 							{link.label}
 						</a>
 					))}

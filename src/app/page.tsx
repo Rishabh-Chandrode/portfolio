@@ -7,6 +7,8 @@ import Projects from '@/components/site/Projects';
 import Skills from '@/components/site/Skills';
 import Contact from '@/components/site/Contact';
 import Footer from '@/components/site/Footer';
+import Spotlight from '@/components/site/Spotlight';
+import ScrollProgress from '@/components/site/ScrollProgress';
 
 export default async function Home() {
 	const content = await getContent();
@@ -14,6 +16,8 @@ export default async function Home() {
 
 	return (
 		<>
+			<Spotlight />
+			<ScrollProgress />
 			<Nav name={profile.name} resumeUrl={profile.resumeUrl} />
 			<main>
 				<Hero profile={profile} />
