@@ -1,7 +1,7 @@
 'use client';
 
 import { Education, Experience, Profile, Project, SkillGroup } from '@/lib/content';
-import { EntryCard, Field, StringListEditor, TextArea, TextInput } from '@/components/admin/fields';
+import { EntryCard, Field, StringListEditor, TagListEditor, TextArea, TextInput } from '@/components/admin/fields';
 
 function useListOps<T>(items: T[], onChange: (items: T[]) => void) {
 	return {
@@ -213,12 +213,11 @@ export function SkillsSection({ skills, onChange }: { skills: SkillGroup[]; onCh
 					<Field label="Category">
 						<TextInput value={group.category} onChange={(category) => groups.update(index, { category })} />
 					</Field>
-					<Field label="Skills (comma separated)">
-						<TextInput
-							value={group.items.join(', ')}
-							onChange={(value) =>
-								groups.update(index, { items: value.split(',').map((item) => item.trim()).filter(Boolean) })
-							}
+					<Field label="Skills">
+						<TagListEditor
+							values={group.items}
+							onChange={(items) => groups.update(index, { items })}
+							placeholder="Add skill…"
 						/>
 					</Field>
 				</EntryCard>
@@ -254,12 +253,11 @@ export function ProjectsSection({
 						<Field label="Title">
 							<TextInput value={project.title} onChange={(title) => entries.update(index, { title })} />
 						</Field>
-						<Field label="Tech (comma separated)">
-							<TextInput
-								value={project.tech.join(', ')}
-								onChange={(value) =>
-									entries.update(index, { tech: value.split(',').map((item) => item.trim()).filter(Boolean) })
-								}
+						<Field label="Tech stack">
+							<TagListEditor
+								values={project.tech}
+								onChange={(tech) => entries.update(index, { tech })}
+								placeholder="Add tech…"
 							/>
 						</Field>
 						<Field label="GitHub URL">
