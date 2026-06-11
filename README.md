@@ -21,7 +21,6 @@ Open http://localhost:3000.
 | `ADMIN_PASSWORD` | for `/admin` | Password for the admin panel |
 | `ADMIN_SESSION_SECRET` | no | Secret for signing admin session cookies (defaults to `ADMIN_PASSWORD`) |
 | `RESEND_API_KEY` | for contact form | Sends contact-form messages via [Resend](https://resend.com) |
-| `GEMINI_API_KEY` | for chat widget | Powers the "ask about me" assistant via Gemini |
 
 ## Admin panel
 
@@ -39,7 +38,6 @@ src/app/page.tsx           # public site
 src/app/admin/             # admin panel (login + editor)
 src/app/api/admin/         # auth + content endpoints
 src/app/api/send/          # contact form (Resend)
-src/app/api/v2/chatbot/    # chat assistant (Gemini, prompt built from content)
 src/components/site/       # public site sections
 src/components/admin/      # admin editor UI
 ```

@@ -7,7 +7,6 @@ import Projects from '@/components/site/Projects';
 import Skills from '@/components/site/Skills';
 import Contact from '@/components/site/Contact';
 import Footer from '@/components/site/Footer';
-import ChatWidget from '@/components/site/ChatWidget';
 
 export default async function Home() {
 	const content = await getContent();
@@ -25,7 +24,6 @@ export default async function Home() {
 				<Contact email={profile.email} />
 			</main>
 			<Footer name={profile.name} socials={profile.socials} />
-			<ChatWidget name={profile.name} />
 		</>
 	);
 }
