@@ -1,0 +1,237 @@
+{
+	"profile": {
+		"name": "Rishabh Chandrode",
+		"role": "Software Engineer",
+		"headline": "I build reliable web systems — from database queries to the pixels on screen.",
+		"summary": "Software engineer at Internshala working across the stack: internal tooling, performance work, and user-facing product. I care about clean code, smart systems, and stuff that just works.",
+		"about": [
+			"Hi, I'm Rishabh. I write code, break things (sometimes on purpose), fix them, and repeat — until it all just clicks.",
+			"I love building software that feels smooth, solves real problems, and maybe even makes someone's day a little easier. Whether it's frontend, backend, cloud, or gluing APIs together — I'm in. I don't chase trends, I chase clarity.",
+			"Outside the code cave you'll catch me strumming my guitar, digging into underrated music, or testing my patience in the name of \"fun\" (thanks, Sekiro)."
+		],
+		"email": "rishabhchandrode@gmail.com",
+		"location": "Gurugram, India",
+		"resumeUrl": "https://drive.google.com/file/d/1BR4btHC56dYJkHIFWiDUcCn3BlsnfFb8/view?usp=drive_link",
+		"avatar": "/images/avatar.jpg",
+		"socials": [
+			{
+				"label": "GitHub",
+				"url": "https://github.com/Rishabh-Chandrode"
+			},
+			{
+				"label": "LinkedIn",
+				"url": "https://www.linkedin.com/in/rishabh-chandrode/"
+			},
+			{
+				"label": "LeetCode",
+				"url": "https://leetcode.com/u/rishabhchandrode/"
+			},
+			{
+				"label": "Instagram",
+				"url": "https://www.instagram.com/rishabh_chandrode/"
+			}
+		]
+	},
+	"experience": [
+		{
+			"company": "Internshala",
+			"role": "Software Development Engineer",
+			"start": "Sep 2024",
+			"end": "Present",
+			"location": "Gurugram, India",
+			"points": [
+				"Automated workflows with cron jobs, enhanced internal tools, and built UIs for marketing campaigns, increasing user engagement by 25%.",
+				"Refactored complex SQL queries and migrated operations to NoSQL with multi-threading, improving database performance by 30%.",
+				"Optimized the codebase for SEO, cutting page load time by 35%, hardened API validations, and resolved 20+ critical issues."
+			]
+		},
+		{
+			"company": "RapidQuest",
+			"role": "Software Development Engineer Intern",
+			"start": "Jan 2024",
+			"end": "Apr 2024",
+			"location": "Pune, India",
+			"points": [
+				"Built a customizable chatbot platform with Python Flask and Jinja, cutting chatbot setup time by 50% compared to traditional methods.",
+				"Integrated OpenAI's GPT-3.5 for natural language processing, reaching an 85% user satisfaction rating on responses.",
+				"Deployed and debugged the application on AWS, ensuring scalability and reliable performance."
+			]
+		}
+	],
+	"education": [
+		{
+			"institution": "University Institute of Technology, RGPV Bhopal",
+			"degree": "B.Tech, Computer Science and Engineering",
+			"start": "2020",
+			"end": "2024"
+		},
+		{
+			"institution": "Kendriya Vidyalaya Khandwa",
+			"degree": "Senior Secondary",
+			"start": "2017",
+			"end": "2019"
+		}
+	],
+	"skills": [
+		{
+			"category": "Languages",
+			"items": [
+				"C++",
+				"C",
+				"Python",
+				"JavaScript",
+				"TypeScript",
+				"SQL"
+			]
+		},
+		{
+			"category": "Frontend",
+			"items": [
+				"React",
+				"Next.js",
+				"HTML",
+				"CSS",
+				"Tailwind CSS"
+			]
+		},
+		{
+			"category": "Backend",
+			"items": [
+				"Node.js",
+				"Express",
+				"Flask",
+				"REST APIs"
+			]
+		},
+		{
+			"category": "Databases",
+			"items": [
+				"MySQL",
+				"MongoDB"
+			]
+		},
+		{
+			"category": "Tools & Platforms",
+			"items": [
+				"Git",
+				"Linux",
+				"AWS",
+				"Cron / Job Scheduling"
+			]
+		},
+		{
+			"category": "Core CS",
+			"items": [
+				"Data Structures",
+				"Algorithms",
+				"OOP"
+			]
+		}
+	],
+	"projects": [
+		{
+			"title": "Co-Editor",
+			"description": "Real-time collaborative text editor. Multiple people edit the same document with live cursors and conflict-free syncing over WebSockets.",
+			"tech": [
+				"React",
+				"Node.js",
+				"Socket.IO"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/collab-txt-editor",
+			"live": "https://coeditor-jjt8.onrender.com/",
+			"image": "/images/projects/co-editor.webp",
+			"featured": true
+		},
+		{
+			"title": "VChat",
+			"description": "Social media web app with posts, profiles, and real-time chat. Full-stack build with authentication and a responsive feed.",
+			"tech": [
+				"React",
+				"Node.js",
+				"MongoDB",
+				"Express"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/VChatv2",
+			"live": "https://vchatv2.vercel.app/",
+			"image": "/images/projects/vchat2.webp",
+			"featured": true
+		},
+		{
+			"title": "Subtitle Generator",
+			"description": "Upload a video, get a subtitle track back. Handles speech-to-text processing and burns the generated subtitles into the file.",
+			"tech": [
+				"Python",
+				"Flask",
+				"FFmpeg"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/videoapp",
+			"live": "https://video-subtitle-adder.onrender.com/",
+			"image": "/images/projects/videoapp.webp",
+			"featured": true
+		},
+		{
+			"title": "PSpot",
+			"description": "Parking space manager for finding and reserving spots, with separate flows for drivers and lot owners.",
+			"tech": [
+				"JavaScript",
+				"Node.js",
+				"MongoDB"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/PSpot",
+			"live": "",
+			"image": "/images/projects/pspot.webp",
+			"featured": false
+		},
+		{
+			"title": "Article Scraper",
+			"description": "CLI tool that scrapes and cleans article content from news sites into structured, readable output.",
+			"tech": [
+				"Python",
+				"BeautifulSoup"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/ArticleScraper",
+			"live": "",
+			"image": "/images/projects/default.webp",
+			"featured": false
+		},
+		{
+			"title": "Lakeview",
+			"description": "Marketing site for a country club — fast, responsive, and SEO-friendly static build.",
+			"tech": [
+				"HTML",
+				"CSS",
+				"JavaScript"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/Lakeview",
+			"live": "https://rishabh-chandrode.github.io/Lakeview/",
+			"image": "/images/projects/lakeview.webp",
+			"featured": false
+		},
+		{
+			"title": "Blogs",
+			"description": "Blogging platform with markdown authoring, user accounts, and a clean reading experience.",
+			"tech": [
+				"Node.js",
+				"Express",
+				"MongoDB"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/blogging",
+			"live": "",
+			"image": "/images/projects/default.webp",
+			"featured": false
+		},
+		{
+			"title": "BizzWhizz",
+			"description": "Company portfolio website with service pages and a contact pipeline.",
+			"tech": [
+				"HTML",
+				"CSS",
+				"JavaScript"
+			],
+			"github": "https://github.com/Rishabh-Chandrode/company",
+			"live": "https://rishabh-chandrode.github.io/company/",
+			"image": "/images/projects/bizzwizz2.webp",
+			"featured": false
+		}
+	]
+}

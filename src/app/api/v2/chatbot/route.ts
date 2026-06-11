@@ -1,27 +1,28 @@
 import { GoogleGenAI } from '@google/genai';
-import { TEMPLATE } from './prompt';
+import { getContent } from '@/lib/content';
+import { buildSystemPrompt } from './prompt';
 
-const ai = new GoogleGenAI({ apiKey: process.env['GEMINI_API_KEY'] });
+export async function POST(request: Request) {
+	const { query, history } = await request.json();
 
-export async function POST(req: Request) {
-	const { query, history } = await req.json();
+	if (!process.env.GEMINI_API_KEY) {
+		return Response.json({ message: 'The assistant is not configured on this deployment.' }, { status: 503 });
+	}
 
 	try {
+		const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+		const content = await getContent();
 		const chat = ai.chats.create({
 			model: 'gemini-3-flash-preview',
-			history: history,
+			history,
 			config: {
-				systemInstruction: TEMPLATE,
+				systemInstruction: buildSystemPrompt(content),
 			},
 		});
-		const response = await chat.sendMessage({
-			message: query,
-		});
+		const response = await chat.sendMessage({ message: query });
 		return Response.json({ message: response.text });
-	} catch (err: any) {
-		console.log(err);
-		return Response.json({
-			message: 'There is some problem connecting gemini',
-		});
+	} catch (error) {
+		console.error('chatbot request failed:', error);
+		return Response.json({ message: 'I had trouble answering that — please try again.' }, { status: 502 });
 	}
 }
