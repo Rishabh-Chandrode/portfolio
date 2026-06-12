@@ -1,9 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /api
 
 # Host
-Host: https://portfolio-rishabh-chandrodes-projects.vercel.app/
+Host: https://rishabhchandrode.com
 
 # Sitemaps
-Sitemap: https://portfolio-rishabh-chandrodes-projects.vercel.app/sitemap.xml
+Sitemap: https://rishabhchandrode.com/sitemap.xml

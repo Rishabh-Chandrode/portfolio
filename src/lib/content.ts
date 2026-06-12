@@ -1,5 +1,13 @@
+import { Redis } from '@upstash/redis';
 import { promises as fs } from 'fs';
 import path from 'path';
+
+const redis = new Redis({
+	url: process.env.portfolio_KV_REST_API_URL!,
+	token: process.env.portfolio_KV_REST_API_TOKEN!,
+});
+
+const REDIS_KEY = 'portfolio';
 
 export interface Social {
 	label: string;
@@ -61,16 +69,18 @@ export interface PortfolioContent {
 const CONTENT_FILE = path.join(process.cwd(), 'content', 'portfolio.json');
 
 export async function getContent(): Promise<PortfolioContent> {
+	const cached = await redis.get<PortfolioContent>(REDIS_KEY);
+	if (cached) return cached;
+
+	// First run: seed Redis from the local JSON file
 	const raw = await fs.readFile(CONTENT_FILE, 'utf-8');
-	return JSON.parse(raw) as PortfolioContent;
+	const content = JSON.parse(raw) as PortfolioContent;
+	await redis.set(REDIS_KEY, content);
+	return content;
 }
 
 export async function saveContent(content: PortfolioContent): Promise<void> {
-	const serialized = JSON.stringify(content, null, '\t') + '\n';
-	// Write to a temp file and rename so a crash mid-write can't corrupt the store.
-	const tmp = CONTENT_FILE + '.tmp';
-	await fs.writeFile(tmp, serialized, 'utf-8');
-	await fs.rename(tmp, CONTENT_FILE);
+	await redis.set(REDIS_KEY, content);
 }
 
 class ValidationError extends Error {}

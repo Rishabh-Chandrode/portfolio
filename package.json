@@ -10,6 +10,7 @@
     "export": "next-sitemap"
   },
   "dependencies": {
+    "@upstash/redis": "^1.38.0",
     "next": "^16.1.3",
     "next-sitemap": "^4.2.3",
     "react": "^18.3.1",

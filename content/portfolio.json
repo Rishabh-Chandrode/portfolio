@@ -107,7 +107,8 @@
 			"category": "Databases",
 			"items": [
 				"MySQL",
-				"MongoDB"
+				"MongoDB",
+				"PostgreSQL"
 			]
 		},
 		{

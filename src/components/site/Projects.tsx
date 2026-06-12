@@ -40,7 +40,7 @@ function BrowserFrame({ project }: { project: Project }) {
 					alt={project.title}
 					fill
 					sizes="(min-width: 1024px) 46vw, 100vw"
-					className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
+					className="object-fill object-top transition-transform duration-700 group-hover:scale-[1.03]"
 				/>
 			</div>
 		</div>

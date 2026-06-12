@@ -16,8 +16,50 @@ export default async function Home() {
 	const content = await getContent();
 	const { profile } = content;
 
+	const jsonLd = {
+		'@context': 'https://schema.org',
+		'@graph': [
+			{
+				'@type': 'Person',
+				'@id': 'https://rishabhchandrode.com/#person',
+				name: profile.name,
+				jobTitle: profile.role,
+				description: profile.summary,
+				url: 'https://rishabhchandrode.com',
+				email: profile.email,
+				image: {
+					'@type': 'ImageObject',
+					url: 'https://rishabhchandrode.com/images/avatar.jpg',
+				},
+				sameAs: profile.socials.map((s) => s.url),
+				knowsAbout: ['Software Engineering', 'Web Development', 'Full Stack Development', 'React', 'Next.js', 'Node.js', 'TypeScript'],
+			},
+			{
+				'@type': 'WebSite',
+				'@id': 'https://rishabhchandrode.com/#website',
+				url: 'https://rishabhchandrode.com',
+				name: profile.name,
+				description: profile.headline,
+				author: { '@id': 'https://rishabhchandrode.com/#person' },
+			},
+			{
+				'@type': 'WebPage',
+				'@id': 'https://rishabhchandrode.com/#webpage',
+				url: 'https://rishabhchandrode.com',
+				name: `${profile.name} — ${profile.role}`,
+				isPartOf: { '@id': 'https://rishabhchandrode.com/#website' },
+				about: { '@id': 'https://rishabhchandrode.com/#person' },
+				description: profile.summary,
+			},
+		],
+	};
+
 	return (
 		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
 			<Spotlight />
 			<ScrollProgress />
 			<Cursor />
