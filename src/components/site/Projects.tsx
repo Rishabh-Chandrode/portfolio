@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Project } from '@/lib/content';
 import Reveal from '@/components/site/Reveal';
 import TiltCard from '@/components/site/TiltCard';
+import SectionHeading from '@/components/site/SectionHeading';
 
 function ExternalLinkIcon() {
 	return (
@@ -55,7 +56,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
 	return (
 		<section id="projects" className="container-md py-20">
 			<Reveal>
-				<h2 className="section-heading">Projects</h2>
+				<SectionHeading title="Projects" />
 			</Reveal>
 
 			<div className="group/grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

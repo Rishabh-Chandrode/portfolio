@@ -1,6 +1,7 @@
 'use client';
 
 import { FormEvent, useState } from 'react';
+import SectionHeading from '@/components/site/SectionHeading';
 
 type Status = 'idle' | 'sending' | 'sent' | 'error';
 
@@ -32,7 +33,7 @@ export default function Contact({ email }: { email: string }) {
 
 	return (
 		<section id="contact" className="container-md py-20">
-			<h2 className="section-heading">Contact</h2>
+			<SectionHeading title="Contact" />
 			<div className="grid gap-10 md:grid-cols-2">
 				<div>
 					<p className="leading-relaxed">

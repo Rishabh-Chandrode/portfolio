@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const LINKS = [
 	{ label: 'About', href: '#about' },
@@ -13,11 +13,19 @@ const LINKS = [
 
 export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: string }) {
 	const [scrolled, setScrolled] = useState(false);
+	const [hidden, setHidden] = useState(false);
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState('');
+	const lastY = useRef(0);
 
+	// Slide the bar away while scrolling down, bring it back on scroll up.
 	useEffect(() => {
-		const onScroll = () => setScrolled(window.scrollY > 8);
+		const onScroll = () => {
+			const y = window.scrollY;
+			setScrolled(y > 8);
+			setHidden(y > 160 && y > lastY.current);
+			lastY.current = y;
+		};
 		onScroll();
 		window.addEventListener('scroll', onScroll, { passive: true });
 		return () => window.removeEventListener('scroll', onScroll);
@@ -43,9 +51,9 @@ export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: stri
 
 	return (
 		<header
-			className={`fixed inset-x-0 top-0 z-40 transition-colors ${
+			className={`fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,transform] duration-300 motion-reduce:transform-none ${
 				scrolled || open ? 'border-b border-line bg-surface/90 backdrop-blur' : 'bg-transparent'
-			}`}
+			} ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
 		>
 			<nav className="container-md flex h-16 items-center justify-between">
 				<Link href="#top" className="font-mono text-sm text-zinc-100 hover:text-accent">

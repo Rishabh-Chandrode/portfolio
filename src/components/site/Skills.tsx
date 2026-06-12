@@ -1,11 +1,12 @@
 import { SkillGroup } from '@/lib/content';
 import Reveal from '@/components/site/Reveal';
+import SectionHeading from '@/components/site/SectionHeading';
 
 export default function Skills({ skills }: { skills: SkillGroup[] }) {
 	return (
 		<section id="skills" className="container-md py-20">
 			<Reveal>
-				<h2 className="section-heading">Skills</h2>
+				<SectionHeading title="Skills" />
 			</Reveal>
 			<div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 				{skills.map((group, index) => (

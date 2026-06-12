@@ -9,6 +9,8 @@ import Contact from '@/components/site/Contact';
 import Footer from '@/components/site/Footer';
 import Spotlight from '@/components/site/Spotlight';
 import ScrollProgress from '@/components/site/ScrollProgress';
+import Cursor from '@/components/site/Cursor';
+import BackToTop from '@/components/site/BackToTop';
 
 export default async function Home() {
 	const content = await getContent();
@@ -18,6 +20,7 @@ export default async function Home() {
 		<>
 			<Spotlight />
 			<ScrollProgress />
+			<Cursor />
 			<Nav name={profile.name} resumeUrl={profile.resumeUrl} />
 			<main>
 				<Hero profile={profile} />
@@ -28,6 +31,7 @@ export default async function Home() {
 				<Contact email={profile.email} />
 			</main>
 			<Footer name={profile.name} socials={profile.socials} />
+			<BackToTop />
 		</>
 	);
 }

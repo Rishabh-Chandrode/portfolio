@@ -79,9 +79,24 @@ body {
 		@apply mb-10 flex items-baseline gap-3 text-2xl font-semibold text-zinc-100;
 	}
 
+	/* Rule line draws in from the left once .is-inview lands (SectionHeading). */
 	.section-heading::after {
 		content: '';
-		@apply h-px flex-1 translate-y-1 bg-line;
+		transform: translateY(0.25rem) scaleX(0);
+		transform-origin: left;
+		transition: transform 0.9s cubic-bezier(0.21, 0.47, 0.32, 0.98) 0.15s;
+		@apply h-px flex-1 bg-line;
+	}
+
+	.section-heading.is-inview::after {
+		transform: translateY(0.25rem) scaleX(1);
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.section-heading::after {
+			transform: translateY(0.25rem) scaleX(1);
+			transition: none;
+		}
 	}
 
 	.input {

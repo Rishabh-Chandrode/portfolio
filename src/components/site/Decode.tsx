@@ -4,12 +4,15 @@ import { useEffect, useState } from 'react';
 
 const GLYPHS = '!<>-_\\/[]{}—=+*^?#';
 
-/** Types text in with a brief character-scramble, terminal style. */
-export default function Decode({ text }: { text: string }) {
+/**
+ * Types text in with a brief character-scramble, terminal style.
+ * Runs once `active` becomes true (immediately by default).
+ */
+export default function Decode({ text, active = true }: { text: string; active?: boolean }) {
 	const [output, setOutput] = useState(text);
 
 	useEffect(() => {
-		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+		if (!active || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
 		let frame = 0;
 		let tick = 0;
@@ -35,7 +38,7 @@ export default function Decode({ text }: { text: string }) {
 		};
 		frame = requestAnimationFrame(step);
 		return () => cancelAnimationFrame(frame);
-	}, [text]);
+	}, [text, active]);
 
 	return <span aria-label={text}>{output}</span>;
 }

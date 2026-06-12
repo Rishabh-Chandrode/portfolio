@@ -1,18 +1,22 @@
 import { Education, Experience as ExperienceT } from '@/lib/content';
 import Reveal from '@/components/site/Reveal';
+import SectionHeading from '@/components/site/SectionHeading';
 
 export default function Experience({ experience, education }: { experience: ExperienceT[]; education: Education[] }) {
 	return (
 		<section id="experience" className="container-md py-20">
 			<Reveal>
-				<h2 className="section-heading">Experience</h2>
+				<SectionHeading title="Experience" />
 			</Reveal>
 
-			<ol className="space-y-12">
+			<ol className="group/list space-y-6">
 				{experience.map((job) => (
-					<li key={`${job.company}-${job.start}`}>
+					<li
+						key={`${job.company}-${job.start}`}
+						className="transition-opacity duration-300 group-hover/list:opacity-40 hover:!opacity-100"
+					>
 						<Reveal>
-							<div className="grid gap-2 md:grid-cols-[11rem_1fr] md:gap-8">
+							<div className="grid gap-2 rounded-lg border border-transparent p-4 transition-colors duration-300 hover:border-line hover:bg-panel/40 md:-mx-4 md:grid-cols-[11rem_1fr] md:gap-8">
 								<p className="font-mono text-xs leading-6 text-zinc-500">
 									{job.start} — {job.end}
 								</p>

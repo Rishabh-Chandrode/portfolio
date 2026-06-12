@@ -1,12 +1,13 @@
 import Image from 'next/image';
 import { Profile } from '@/lib/content';
 import Reveal from '@/components/site/Reveal';
+import SectionHeading from '@/components/site/SectionHeading';
 
 export default function About({ profile }: { profile: Profile }) {
 	return (
 		<section id="about" className="container-md py-20">
 			<Reveal>
-				<h2 className="section-heading">About</h2>
+				<SectionHeading title="About" />
 				<div className="flex flex-col-reverse gap-10 md:flex-row md:items-start">
 					<div className="flex-1 space-y-4 leading-relaxed">
 						{profile.about.map((paragraph) => (
