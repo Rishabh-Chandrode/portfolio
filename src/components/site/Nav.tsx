@@ -12,17 +12,15 @@ const LINKS = [
 ];
 
 export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: string }) {
-	const [scrolled, setScrolled] = useState(false);
 	const [hidden, setHidden] = useState(false);
 	const [open, setOpen] = useState(false);
 	const [active, setActive] = useState('');
 	const lastY = useRef(0);
 
-	// Slide the bar away while scrolling down, bring it back on scroll up.
+	// Slide the island away while scrolling down, bring it back on scroll up.
 	useEffect(() => {
 		const onScroll = () => {
 			const y = window.scrollY;
-			setScrolled(y > 8);
 			setHidden(y > 160 && y > lastY.current);
 			lastY.current = y;
 		};
@@ -51,56 +49,71 @@ export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: stri
 
 	return (
 		<header
-			className={`fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,transform] duration-300 motion-reduce:transform-none ${
-				scrolled || open ? 'border-b border-line bg-surface/90 backdrop-blur' : 'bg-transparent'
-			} ${hidden && !open ? '-translate-y-full' : 'translate-y-0'}`}
+			className={`fixed inset-x-0 top-3 z-40 flex justify-center px-4 transition-transform duration-300 motion-reduce:transform-none sm:top-4 ${
+				hidden && !open ? '-translate-y-[150%]' : 'translate-y-0'
+			}`}
 		>
-			<nav className="container-md flex h-16 items-center justify-between">
-				<Link href="#top" className="font-mono text-sm text-zinc-100 hover:text-accent">
-					{name.toLowerCase().replace(/\s+/g, '-')}
-				</Link>
+			<div className="relative w-full max-w-3xl">
+				<nav className="flex items-center justify-between rounded-full border border-line bg-surface/70 py-1.5 pl-2 pr-2 shadow-lg shadow-black/40 backdrop-blur-xl">
+					<Link
+						href="#top"
+						className="rounded-full px-3 py-1.5 font-mono text-xs text-zinc-100 transition-colors hover:text-accent"
+					>
+						{name.toLowerCase().replace(/\s+/g, '-')}
+					</Link>
 
-				<div className="hidden items-center gap-7 md:flex">
-					{LINKS.map((link) => (
+					<div className="hidden items-center gap-0.5 md:flex">
+						{LINKS.map((link) => (
+							<a
+								key={link.href}
+								href={link.href}
+								className={`rounded-full px-3 py-1.5 text-sm transition-colors duration-200 ${
+									active === link.href
+										? 'bg-white/10 text-zinc-100'
+										: 'text-zinc-400 hover:bg-white/5 hover:text-zinc-100'
+								}`}
+							>
+								{link.label}
+							</a>
+						))}
+					</div>
+
+					{resumeUrl ? (
 						<a
-							key={link.href}
-							href={link.href}
-							className={`relative text-sm transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:bg-accent after:transition-transform after:duration-300 hover:text-zinc-100 hover:after:scale-x-100 ${
-								active === link.href ? 'text-zinc-100 after:scale-x-100' : 'text-zinc-400 after:scale-x-0'
-							}`}
+							href={resumeUrl}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hidden rounded-full bg-accent px-3.5 py-1.5 text-xs font-medium text-surface transition-colors hover:bg-accent/85 md:block"
 						>
-							{link.label}
-						</a>
-					))}
-					{resumeUrl && (
-						<a href={resumeUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost h-8 px-3 text-xs">
 							Resume
 						</a>
+					) : (
+						<span className="hidden w-2 md:block" />
 					)}
-				</div>
 
-				<button
-					type="button"
-					aria-label="Toggle menu"
-					aria-expanded={open}
-					onClick={() => setOpen((value) => !value)}
-					className="flex h-9 w-9 items-center justify-center text-zinc-300 md:hidden"
-				>
-					<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-						{open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
-					</svg>
-				</button>
-			</nav>
+					<button
+						type="button"
+						aria-label="Toggle menu"
+						aria-expanded={open}
+						onClick={() => setOpen((value) => !value)}
+						className="flex h-8 w-8 items-center justify-center rounded-full text-zinc-300 md:hidden"
+					>
+						<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+							{open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M4 7h16M4 12h16M4 17h16" />}
+						</svg>
+					</button>
+				</nav>
 
-			{open && (
-				<div className="border-t border-line bg-surface/95 backdrop-blur md:hidden">
-					<div className="container-md flex flex-col gap-1 py-3">
+				{open && (
+					<div className="absolute inset-x-0 top-full mt-2 rounded-2xl border border-line bg-surface/90 p-2 shadow-lg shadow-black/40 backdrop-blur-xl md:hidden">
 						{LINKS.map((link) => (
 							<a
 								key={link.href}
 								href={link.href}
 								onClick={() => setOpen(false)}
-								className="rounded-md px-3 py-2 text-sm text-zinc-300 hover:bg-panel hover:text-zinc-100"
+								className={`block rounded-xl px-4 py-2.5 text-sm transition-colors ${
+									active === link.href ? 'bg-white/10 text-zinc-100' : 'text-zinc-300 hover:bg-white/5'
+								}`}
 							>
 								{link.label}
 							</a>
@@ -110,14 +123,14 @@ export default function Nav({ name, resumeUrl }: { name: string; resumeUrl: stri
 								href={resumeUrl}
 								target="_blank"
 								rel="noopener noreferrer"
-								className="rounded-md px-3 py-2 text-sm text-accent hover:bg-panel"
+								className="block rounded-xl px-4 py-2.5 text-sm text-accent hover:bg-white/5"
 							>
 								Resume
 							</a>
 						)}
 					</div>
-				</div>
-			)}
+				)}
+			</div>
 		</header>
 	);
 }

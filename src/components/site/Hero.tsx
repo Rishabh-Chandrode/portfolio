@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react';
 import { Profile } from '@/lib/content';
-import SocialIcon from '@/components/site/SocialIcon';
 import Decode from '@/components/site/Decode';
+import Dock from '@/components/site/Dock';
 import Magnetic from '@/components/site/Magnetic';
 import Parallax from '@/components/site/Parallax';
 import ParticleField from '@/components/site/ParticleField';
@@ -13,29 +13,33 @@ function enterDelay(ms: number): CSSProperties {
 export default function Hero({ profile }: { profile: Profile }) {
 	return (
 		<section id="top" className="relative flex min-h-screen flex-col justify-center overflow-hidden">
+			<div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+				<div className="aurora-a absolute -left-1/4 -top-1/4 h-[70vh] w-[60vw] rounded-full bg-accent/15 blur-[120px]" />
+				<div className="aurora-b absolute -bottom-1/4 -right-1/4 h-[60vh] w-[55vw] rounded-full bg-sky-500/10 blur-[120px]" />
+			</div>
 			<ParticleField />
 			<Parallax>
-				<div className="container-md relative pb-16 pt-24">
-					<p className="animate-enter mb-4 font-mono text-sm text-accent" style={enterDelay(0)}>
+				<div className="container-md relative pb-16 pt-28">
+					<p className="animate-enter mb-5 font-mono text-sm text-accent" style={enterDelay(0)}>
 						<Decode text={`${profile.role} · ${profile.location}`} />
 					</p>
 					<h1
-						className="animate-enter max-w-3xl text-4xl font-bold leading-tight tracking-tight text-zinc-100 sm:text-5xl md:text-6xl"
+						className="animate-enter max-w-4xl bg-gradient-to-b from-white via-white to-zinc-500 bg-clip-text pb-1 text-5xl font-bold leading-[1.05] tracking-tight text-transparent sm:text-6xl md:text-7xl"
 						style={enterDelay(120)}
 					>
 						{profile.name}.
 					</h1>
 					<h2
-						className="animate-enter mt-3 max-w-2xl text-2xl font-semibold leading-snug tracking-tight text-zinc-500 sm:text-3xl"
+						className="animate-enter mt-4 max-w-2xl text-2xl font-semibold leading-snug tracking-tight text-zinc-500 sm:text-3xl"
 						style={enterDelay(240)}
 					>
 						{profile.headline}
 					</h2>
-					<p className="animate-enter mt-6 max-w-xl leading-relaxed" style={enterDelay(360)}>
+					<p className="animate-enter mt-7 max-w-xl leading-relaxed" style={enterDelay(360)}>
 						{profile.summary}
 					</p>
 
-					<div className="animate-enter mt-8 flex flex-wrap items-center gap-4" style={enterDelay(480)}>
+					<div className="animate-enter mt-9 flex flex-wrap items-center gap-4" style={enterDelay(480)}>
 						<Magnetic>
 							<a href="#projects" className="btn-primary group">
 								See my work
@@ -52,21 +56,7 @@ export default function Hero({ profile }: { profile: Profile }) {
 								</span>
 							</a>
 						</Magnetic>
-						<div className="flex items-center gap-1">
-							{profile.socials.map((social) => (
-								<a
-									key={social.url}
-									href={social.url}
-									target="_blank"
-									rel="noopener noreferrer"
-									aria-label={social.label}
-									title={social.label}
-									className="flex h-10 w-10 items-center justify-center rounded-md text-zinc-500 transition-all duration-200 hover:-translate-y-0.5 hover:text-accent"
-								>
-									<SocialIcon label={social.label} />
-								</a>
-							))}
-						</div>
+						<Dock socials={profile.socials} />
 					</div>
 				</div>
 			</Parallax>

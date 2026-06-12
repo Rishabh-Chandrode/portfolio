@@ -38,6 +38,40 @@ body {
 	animation-delay: var(--enter-delay, 0ms);
 }
 
+/* Soft aurora blobs drifting behind the hero. */
+@keyframes aurora-a {
+	from {
+		transform: translate(-12%, -8%) scale(1);
+	}
+	to {
+		transform: translate(8%, 12%) scale(1.15);
+	}
+}
+
+@keyframes aurora-b {
+	from {
+		transform: translate(10%, 14%) scale(1.1);
+	}
+	to {
+		transform: translate(-10%, -6%) scale(0.95);
+	}
+}
+
+.aurora-a {
+	animation: aurora-a 16s ease-in-out infinite alternate;
+}
+
+.aurora-b {
+	animation: aurora-b 22s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.aurora-a,
+	.aurora-b {
+		animation: none;
+	}
+}
+
 /* 3D tilt cards: transform is driven from JS, the glare follows --glare-x/y. */
 .tilt {
 	transform-style: preserve-3d;
@@ -104,7 +138,7 @@ body {
 	}
 
 	.btn {
-		@apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+		@apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
 	}
 
 	.btn-primary {

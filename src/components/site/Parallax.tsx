@@ -2,7 +2,10 @@
 
 import { ReactNode, useEffect, useRef } from 'react';
 
-/** Drifts and fades the hero content as the page scrolls away from it. */
+/**
+ * Apple-style hero exit: as the page scrolls, the hero content drifts down
+ * slightly, scales away and softly blurs out.
+ */
 export default function Parallax({ children }: { children: ReactNode }) {
 	const ref = useRef<HTMLDivElement>(null);
 
@@ -16,8 +19,10 @@ export default function Parallax({ children }: { children: ReactNode }) {
 			frame = requestAnimationFrame(() => {
 				const y = window.scrollY;
 				if (y > window.innerHeight) return; // hero is off-screen
-				node.style.transform = `translateY(${(y * 0.22).toFixed(1)}px)`;
-				node.style.opacity = `${Math.max(0, 1 - y / (window.innerHeight * 0.85)).toFixed(3)}`;
+				const progress = Math.min(1, y / (window.innerHeight * 0.85));
+				node.style.transform = `translateY(${(y * 0.22).toFixed(1)}px) scale(${(1 - progress * 0.06).toFixed(4)})`;
+				node.style.opacity = `${(1 - progress).toFixed(3)}`;
+				node.style.filter = progress > 0.02 ? `blur(${(progress * 5).toFixed(2)}px)` : '';
 			});
 		};
 		update();

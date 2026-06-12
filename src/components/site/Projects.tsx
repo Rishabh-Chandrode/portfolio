@@ -63,7 +63,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
 				{featured.map((project, index) => (
 					<Reveal key={project.title} delay={index * 75}>
 						<TiltCard className="h-full transition-opacity duration-300 group-hover/grid:opacity-50 hover:!opacity-100">
-							<article className="group relative flex h-full flex-col overflow-hidden rounded-lg border border-line bg-panel transition-colors hover:border-accent/40">
+							<article className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel transition-colors hover:border-accent/40">
 								<div className="tilt-glare pointer-events-none absolute inset-0 z-10" aria-hidden="true" />
 								{project.image && (
 									<div className="relative aspect-[16/9] overflow-hidden border-b border-line">
@@ -100,7 +100,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
 					<div className="grid gap-4 sm:grid-cols-2">
 						{other.map((project) => (
 							<Reveal key={project.title}>
-								<article className="flex h-full flex-col gap-3 rounded-lg border border-line p-5 transition-colors hover:border-accent/40">
+								<article className="flex h-full flex-col gap-3 rounded-2xl border border-line p-5 transition-colors hover:border-accent/40">
 									<div className="flex items-start justify-between gap-3">
 										<h3 className="font-semibold text-zinc-100">{project.title}</h3>
 										<ProjectLinks project={project} />
