@@ -78,6 +78,109 @@ body {
 	}
 }
 
+/* Receding "Tron" grid floor for the hero. */
+.grid-floor {
+	background-image:
+		linear-gradient(to right, rgba(76, 195, 138, 0.14) 1px, transparent 1px),
+		linear-gradient(to bottom, rgba(76, 195, 138, 0.14) 1px, transparent 1px);
+	background-size: 56px 56px;
+	transform: perspective(420px) rotateX(64deg);
+	transform-origin: bottom center;
+	mask-image: linear-gradient(to top, black 0%, transparent 75%);
+	-webkit-mask-image: linear-gradient(to top, black 0%, transparent 75%);
+	animation: grid-flow 6s linear infinite;
+}
+
+@keyframes grid-flow {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 0 56px;
+	}
+}
+
+/* Frosted-glass surface used across cards. */
+.glass {
+	background: linear-gradient(165deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.012));
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	backdrop-filter: blur(18px);
+	-webkit-backdrop-filter: blur(18px);
+}
+
+/* Pointer-driven 3D tilt. Transform is written from JS (see Tilt3D). */
+.tilt3d {
+	transform: perspective(1000px);
+	transform-style: preserve-3d;
+	transition: transform 0.4s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+	will-change: transform;
+}
+
+.tilt3d-glare {
+	background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.14), transparent 55%);
+	opacity: 0;
+	transition: opacity 0.35s ease;
+}
+
+.tilt3d:hover .tilt3d-glare {
+	opacity: 1;
+}
+
+.depth {
+	transform: translateZ(var(--z, 40px));
+}
+
+/* Continuous marquee track (duplicated content scrolls one full width). */
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.marquee-track {
+	animation: marquee var(--marquee-duration, 32s) linear infinite;
+}
+
+.marquee:hover .marquee-track {
+	animation-play-state: paused;
+}
+
+/* Slow vertical float for accent elements. */
+@keyframes float-y {
+	from {
+		transform: translateY(-6px);
+	}
+	to {
+		transform: translateY(6px);
+	}
+}
+
+.float-y {
+	animation: float-y 5s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.grid-floor,
+	.marquee-track,
+	.float-y {
+		animation: none;
+	}
+
+	.tilt3d {
+		transform: none !important;
+		transition: none;
+	}
+}
+
+@layer utilities {
+	.preserve-3d {
+		transform-style: preserve-3d;
+	}
+}
+
 @layer components {
 	.container-md {
 		@apply mx-auto w-full max-w-4xl px-6;

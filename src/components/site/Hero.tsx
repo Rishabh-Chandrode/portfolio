@@ -16,6 +16,7 @@ export default function Hero({ profile }: { profile: Profile }) {
 			<div aria-hidden="true" className="absolute inset-0 overflow-hidden">
 				<div className="aurora-a absolute -left-1/4 -top-1/4 h-[70vh] w-[60vw] rounded-full bg-accent/15 blur-[120px]" />
 				<div className="aurora-b absolute -bottom-1/4 -right-1/4 h-[60vh] w-[55vw] rounded-full bg-sky-500/10 blur-[120px]" />
+				<div className="grid-floor absolute inset-x-0 bottom-0 h-[42vh] opacity-60" />
 			</div>
 			<ParticleField />
 			<Parallax>
@@ -60,6 +61,17 @@ export default function Hero({ profile }: { profile: Profile }) {
 					</div>
 				</div>
 			</Parallax>
+
+			<a
+				href="#about"
+				aria-label="Scroll to about"
+				className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-zinc-600 transition-colors hover:text-accent sm:flex"
+			>
+				<span className="font-mono text-[10px] uppercase tracking-[0.2em]">Scroll</span>
+				<span className="flex h-8 w-5 items-start justify-center rounded-full border border-current p-1">
+					<span className="float-y h-1.5 w-1 rounded-full bg-current" />
+				</span>
+			</a>
 		</section>
 	);
 }
