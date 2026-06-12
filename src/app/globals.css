@@ -72,35 +72,9 @@ body {
 	}
 }
 
-/* 3D tilt cards: transform is driven from JS, the glare follows --glare-x/y. */
-.tilt {
-	transform-style: preserve-3d;
-	transition: transform 0.18s ease-out;
-	will-change: transform;
-}
-
-.tilt-glare {
-	background: radial-gradient(
-		420px circle at var(--glare-x, 50%) var(--glare-y, 50%),
-		rgba(255, 255, 255, 0.07),
-		transparent 65%
-	);
-	opacity: 0;
-	transition: opacity 0.25s;
-}
-
-.tilt:hover .tilt-glare {
-	opacity: 1;
-}
-
 @media (prefers-reduced-motion: reduce) {
 	.animate-enter {
 		animation: none;
-	}
-
-	.tilt,
-	.tilt:hover {
-		transform: none !important;
 	}
 }
 
